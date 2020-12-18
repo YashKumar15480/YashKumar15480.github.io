@@ -1,0 +1,20 @@
+
+<head>
+ <title>Hellow world</title>
+</head> <link rel="icon" href="yash.jpg" type="image/jpg" sizes="16x16">
+<body>  
+ <h1> Yash kumar Resume</h1>
+	<p><strong> Hellow,everyone present here my name is Yash Kumar</strong></p>
+    <p1> I completed my schooling from ARMY PUBLIC SCHOOL DELHI CANTT</p1><br>
+	<p2>I completed my BCA from KNMIET institution which affliated from CCSU</p2><br>
+    <p3>My hobbies is making digital Art and doing creative digital stuffs</p3><br>
+	<p4> My father is an Army man and currently posted at Sikhim </p4><br>
+	<p5>I am good at programing and fast typing but i always have fear to deal with Math subject</p5><br>
+	<p6> Below there are some links on which you can follow me </p6><br>
+	<br><br>
+	<p7>Follow me on INSTAGRAM</p7> 
+        <a href ="https://www.instagram.com/yashkumar.wtf/">CLICK here</a><br>
+	<p8>Follow me on FACEBOOK</p8>
+	    <a href ="https://www.facebook.com/profile.php?id=100010821993557">CLICK here</a><br>
+</body>
+</html>

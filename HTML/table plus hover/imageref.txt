@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>image ref</title>
+</head>
+	<link rel="icon" href="yash.jpg" type="image/jpg" sizes="16x16">
+
+<body>
+	<h1 style="color:red;">Hellow, it's in size 1</h1>
+	 <h2 style="color:yellowgreen;" >Hellow, it's in size 2</h2>
+	  <h3>Hellow, it's in size 3</h3>
+	   <h4 style="color:aqua;">Hellow, it's in size 4</h4>
+	    <h5 style="color:brown;">Hellow, it's in size 5</h5>
+         <h6>Hellow, it's in size 6</h6>
+	<p>Just a odinary image from desktop </p>
+   <img src="C:\Users\YASH ADMIN\Desktop\HTML work\yash.jpg" alt ="Image of Y" width ="50" height="100">
+	<br><p1>CLICK ON BELOW IMAGES TO VISIT LOGIN PAGE</p1><br>
+	
+	<a href="https://www.instagram.com/"><img src="C:\Users\YASH ADMIN\Desktop\insta.jpg" alt="Instagram login page" style = "width:42px;height:42px;"></a>
+	
+<a href="https://www.facebook.com/"><img src="C:\Users\YASH ADMIN\Desktop\fb.jpg" alt="Instagram login page" style = "width:42px;height:42px;"></a>
+	
+	
+</body>
+</html>
