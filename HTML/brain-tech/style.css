@@ -1,0 +1,139 @@
+/* CSS Document */
+body{padding:0px; margin:18px 0 0; background:#590000; color:#CD7A7A; font:12px/14px Arial, Helvetica, sans-serif;}
+div, p, ul, h2, h3, h4, h5, form, img{padding:0px; margin:0px;}
+ul{list-style-type:none;}
+
+/*----TOP PANEL----*/
+#topPan{width:778px; height:113px; position:relative; margin:0 auto; background:url(images/toppan-bg.jpg) 0 0 repeat-x;}
+#topPan img.logo{width:219px; height:58px; position:absolute; top:13px; left:104px;}
+#topPan ul{width:486px; height:30px; position:absolute; top:83px; left:146px;}
+#topPan ul li{width:81px; height:30px; float:left;}
+#topPan ul li a{width:81px; height:30px; display:block; background:url(images/menu-bg.gif) 0 0 repeat-x #2F0000; color:#fff; font:12px/30px "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold; text-align:center; text-decoration:none;}
+#topPan ul li a:hover{background:#590000; color:#fff; text-decoration:none;}
+
+#topPan ul li.home{width:81px; height:30px; display:block; background:#590000; color:#fff; font:12px/30px "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold; text-align:center; text-decoration:none;}
+
+#topcontactPan{width:153px; height:40px; background:url(images/icon1.jpg) 0 0 no-repeat #CC0000; color:#fff; position:absolute; top:18px; left:384px;}
+#topcontactPan p.tollfree{width:78px; height:17px; background:#590000; color:#fff; font-size:11px; font-weight:bold; text-transform:uppercase; margin:4px 0 0 37px; text-align:center; line-height:17px;} 
+#topcontactPan p.phoneno{font-size:18px; padding:5px 0 0 37px;}
+
+#topimagePan{width:209px; height:83px; position:absolute; top:0px; right:0px; background:url(images/image1.jpg) 0 0 no-repeat;}
+/*----/TOP PANEL----*/
+
+/*----BODY PANEL----*/
+#bodyPan{width:715px; position:relative; margin:0 auto;}
+/*----Left Panel----*/
+#leftPan{width:480px; float:left; padding:18px 26px 0 0;}
+#leftPan p{padding:14px 0 0;}
+
+#leftPan h2{width:220px; height:26px; background:#590000; color:#fff; font:26px/26px Georgia, "Times New Roman", Times, serif;}
+#leftPan h2 span{background:#590000; color:#F10000;}
+/*-------Left Block One-------*/
+#leftblockonePan{width:240px; float:left; padding:10px 45px 0 0;}
+
+#leftblockonePan p span{font-weight:bold;}
+#leftblockonePan p.border{height:8px; background:url(images/doted-line.gif) 0 0 repeat-x; padding:0px; margin:10px 0 0;} 
+
+#leftblockonePan h3{width:180px; height:40px; background:#590000; color:#fff; font:26px/40px Georgia, "Times New Roman", Times, serif;}
+#leftblockonePan h3 span{background:#590000; color:#F10000;}
+
+#leftblockonePan h4{width:200px; height:26px; background:#590000; color:#fff; font-size:14px; font-weight:bold; text-transform:uppercase;}
+#leftblockonePan h4 span{background:#590000; color:#CD7A7A; font:28px/26px Georgia, "Times New Roman", Times, serif;}
+
+#leftblockoneLinkPan{width:157px; height:19px; display:block; margin:5px 0 0 82px; clear:both;}
+#leftblockoneLinkPan ul{width:157px; height:19px;}
+#leftblockoneLinkPan ul li{height:19px; float:left; font-size:11px; text-transform:uppercase;}
+#leftblockoneLinkPan ul li.comments{width:60px; height:19px; padding:0 30px 0 0; display:block; background:url(images/icon2.jpg) 100% 0 no-repeat #590000; color:#fff; }
+
+#leftblockoneLinkPan ul li.more{width:58px; height:19px; margin:0 0 0 8px;}
+#leftblockoneLinkPan ul li.more a{width:58px; height:19px; background:url(images/arrow1.gif) 100% 2px no-repeat #590000; color:#fff; text-decoration:none; padding:0 20px 0 0;}
+#leftblockoneLinkPan ul li.more a:hover{width:58px; height:19px; background:url(images/arrow2.gif) 100% 2px no-repeat #590000; color:#fff; text-decoration:none;}
+
+#leftblockoneLinktwoPan{width:157px; display:block; margin:5px 0 0 82px; clear:both;}
+#leftblockoneLinktwoPan ul{width:157px;}
+#leftblockoneLinktwoPan ul li{height:19px; float:left; font-size:11px; text-transform:uppercase;}
+#leftblockoneLinktwoPan ul li.comments{width:60px; height:19px; padding:0 30px 0 0; display:block; background:url(images/icon2.jpg) 100% 0 no-repeat #590000; color:#fff; }
+
+#leftblockoneLinktwoPan ul li.more{width:58px; height:19px; margin:0 0 0 8px;}
+#leftblockoneLinktwoPan ul li.more a{width:58px; height:19px; background:url(images/arrow1.gif) 100% 2px no-repeat #590000; color:#fff; text-decoration:none; padding:0 20px 0 0;}
+#leftblockoneLinktwoPan ul li.more a:hover{width:58px; height:19px; background:url(images/arrow2.gif) 100% 2px no-repeat #590000; color:#fff; text-decoration:none;}
+
+/*----Left Block Two Panel----*/
+#leftblocktwoPan{width:192px; float:left; padding:10px 0 0;}
+
+#leftblocktwoPan h3{width:180px; height:50px; background:#590000; color:#fff; font:26px/50px Georgia, "Times New Roman", Times, serif;}
+#leftblocktwoPan h3 span{background:#590000; color:#F10000;}
+
+#leftblocktwoPan ul{width:192px;}
+#leftblocktwoPan ul li{float:left;}
+#leftblocktwoPan ul li.bookname{width:150px; height:18px; display:block; background:url(images/arrow.gif) 0 6px no-repeat #590000; color:#CD7A7A; font-size:12px; line-height:18px; padding:0 0 0 10px;}
+#leftblocktwoPan ul li.price{width:25px; height:18px; display:block; background:#590000; color:#fff; font-weight:bold; line-height:18px;}
+
+#leftblocktwoPan p{width:190px; height:42px; float:left; display:block; background:url(images/icon3.gif) 100% 0 no-repeat #590000; color:#fff; font-size:16px; text-transform:uppercase; margin:10px 0 0;}
+#leftblocktwoPan p span{font-size:11px; font-weight:bold; text-transform:uppercase;}
+/*----/Left Block Two Panel----*/
+/*----/Left Panel----*/
+
+/*---- Right Panel----*/
+#rightPan{width:209px; float:left; padding:42px 0 0;}
+#rightPan form.form1{width:209px; height:138px; background:url(images/form1-bg.gif) 0 0 no-repeat #590000; color:#fff;}
+
+#rightPan form.form1 h2{width:189px; height:36px; background:url(images/member-bg.gif) 0 0 no-repeat; padding:0 0 0 20px; font:20px/36px Georgia, "Times New Roman", Times, serif; margin:0 0 8px 0;}
+
+#rightPan form.form1 label{width:66px; height:18px; float:left; display:block; font-size:13px; line-height:18px; padding:0 0 0 21px; margin:9px 0 0;}
+#rightPan form.form1 label.label1{width:138px; height:16px; float:left; display:block; background:#2F0000; color:#FC0404; font-size:10px; text-transform:uppercase; margin:9px 0 0 2px; padding:0 0 0 19px;}
+
+#rightPan form.form1 input{width:100px; height:18px; float:left; display:block; padding:0px; margin:9px 0 0;}
+#rightPan form.form1 input.botton{width:30px; height:14px; float:left; display:block; background:url(images/botton.gif) 100% 3px no-repeat #2F0000; color:#fff; font-size:12px; border:none; padding:0 10px 0 0; margin:9px 0 0; line-height:14px; }
+
+#rightPan h3{width:188px; height:33px; background:#3C0101; color:#fff; font:20px Georgia, "Times New Roman", Times, serif; padding:18px 0 0 21px; margin:13px 0 0;}
+
+#rightPan ul{width:188px; height:129px; padding:0 0 0 21px; background:#3C0101; color:#fff; margin:0 0 13px 0;}
+#rightPan ul li{width:141px; height:18px;}
+#rightPan ul li a{width:141px; height:18px; background:url(images/arrow3.gif) 0 5px no-repeat #3C0101; color:#fff; font-size:12px; text-decoration:none; line-height:18px; padding:0 0 0 15px;}
+#rightPan ul li a:hover{width:141px; height:18px; background:url(images/arrow4.gif) 0 5px no-repeat #3C0101; color:#FFD6D6; text-decoration:none;} 
+
+#rightform2Pan{width:209px; position:relative; margin:0 auto;}
+#rightPan form.form2{width:209px; height:111px; background:url(images/form1-bg.gif) 0 0 no-repeat #2F0000; color:#fff; font-size:12px; }
+#rightPan form.form2 h2{width:189px; height:36px; background:url(images/member-bg.gif) 0 0 no-repeat; padding:0 0 0 20px; font:20px/36px Georgia, "Times New Roman", Times, serif; margin:0 0 8px 0;}
+#rightPan form.form2 label{width:43px; height:18px; float:left; display:block; font-size:12px; padding:0 0 0 12px; line-height:18px;}
+#rightPan form.form2 input{width:100px; height:18px; float:left; display:block; padding:0px;}
+#rightPan form.form2 select{width:41px; height:20px; float:left; display:block; background:#fff; color:#000; font-size:14px; margin:0 0 0 4px;} 
+
+#rightPan form.form2 input.search{width:60px; height:20px; float:right; display:block; background:url(images/botton2.gif) 100% 6px no-repeat #2F0000; border:none; color:#fff; font-size:12px; line-height:20px; padding:0 25px 0 0; position:absolute; top:78px; right:8px;} 
+/*----/BODY PANEL----*/
+
+/*----BOTTOM BODY PANEL----*/
+#bodyBottomPan{width:778px; height:40px; background:url(images/body-bottombg.gif) 0 0 repeat-x #590000; color:#CD7A7A; position:relative; margin:0 auto; clear:both; padding:52px 0 0;}
+#BottomLeftPan{width:178px; float:left;}
+#BottomLeftPan p{background:#590000; color:#fff; font:30px/25px Georgia, "Times New Roman", Times, serif; padding:0 0 0 32px;}
+#BottomLeftPan p span{font-size:21px; text-transform:uppercase;}
+
+#BottomMiddlePan{width:393px; float:left; background:url(images/image2.gif) 100% 0 no-repeat; padding:0 206px 0 0;}
+
+#BottomMiddlePan p.more{width:70px; height:16px; margin:5px 0 30px 318px;}
+#BottomMiddlePan p.more a{width:60px; height:16px; display:block; background:url(images/botton2.gif) 85% 50% no-repeat #3C0101; color:#fff; text-transform:uppercase; font-size:11px; line-height:18px; text-decoration:none; padding:0 0 0 10px;}
+#BottomMiddlePan p.more a:hover{background:url(images/botton2.gif) 85% 50% no-repeat #3C0101; color:#F10000; text-decoration:none;}
+/*----/BOTTOM BODY PANEL----*/
+/*----FOOTER PANEL----*/
+#footerPan{width:778px; height:107px; background:#2F0000; color:#fff; position:relative; margin:0 auto; font:12px/16px "Trebuchet MS", Arial, Helvetica, sans-serif; clear:both; padding:26px 0 0;}
+
+#footerPan ul{width:400px; position:relative; margin:0 auto;}
+#footerPan li{float:left; }
+#footerPan ul li a{padding:0 10px 0; color:#fff; background:#2F0000; text-decoration:none;}
+#footerPan ul li a:hover{text-decoration:underline;}
+
+#footerPan p.copyright{width:204px; background:#2F0000; color:#fff; position:absolute; top:48px; left:198px; font-size:12px;}
+
+#footerPan ul.templateworld{width:250px; background:#2F0000; color:#fff; display:block; position:absolute; top:68px; left:198px; font-size:10px;}
+#footerPan ul.templateworld li{height:20px;}
+#footerPan ul.templateworld li a{background:#2F0000; display:block; color:#fff; text-decoration:none;}
+#footerPan ul.templateworld li a:hover{text-decoration:underline;}
+
+#footerPanhtml{width:62px; height:12px; display:block; position:absolute; top:50px; left:400px;}
+#footerPanhtml a{width:48px; height:12px; display:block; background:url(images/xhtml-normal.gif) 85% 60% no-repeat #B70000; color:#fff; line-height:12px; font-size:11px; font-weight:bold; text-decoration:none; padding:0 0 0 10px;}
+#footerPanhtml a:hover{background:url(images/css-normal.gif) 85% 60% no-repeat #913C3C; color:#fff;}
+
+#footerPancss{width:50px; height:12px; display:block; position:absolute; top:50px; left:460px;}
+#footerPancss a{width:40px; height:12px; display:block; background:url(images/css-normal.gif) 35px 3px no-repeat #913C3C; color:#fff; line-height:12px; font-size:11px; font-weight:bold; text-decoration:none; padding:0 0 0 10px; text-transform:uppercase;}
+#footerPancss a:hover{background:url(images/xhtml-normal.gif) 35px 3px no-repeat #B70000; color:#fff;}
