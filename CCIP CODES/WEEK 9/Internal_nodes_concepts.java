@@ -12,6 +12,6 @@ public class Solution {
     int dif = x - 1;
     System.out.println((x * n) - dif);
 
-    // yash kumar
+    // yash kumar // yash kumar
   }
 }
