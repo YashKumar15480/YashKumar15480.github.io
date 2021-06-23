@@ -26,6 +26,7 @@ public class solutions
                 if(s1.equals(b1)) break;
             }
             //positive loop
+            //YASH KUMAR
             for(j=n+1;j<=9999;j++)
             {
                 String s2 = String.valueOf(j);
