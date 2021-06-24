@@ -10,7 +10,7 @@ void main()
  initgraph(&gd,&gm,"c:\\turboc3\\bgi");
 
  setcolor(GREEN);
- line(0,300,700,300);  //wheels
+ line(0,300,700,300);  //wheels sss
 setcolor(WHITE);
   circle(100,285,15);
    circle(200,285,15);
