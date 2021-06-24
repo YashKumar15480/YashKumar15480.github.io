@@ -20,6 +20,7 @@ public class ReverseInteger {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        sc.close();
         Solution yash = new Solution();
 
         if (n == 0)
