@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class Solution1 {
     public boolean isPalindrome(int x)
 
     {
