@@ -23,6 +23,7 @@ class Solution {
 public class Palindrome_number {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
+        sc.close();
         int n = sc.nextInt();
         Solution ss = new Solution();
         System.out.println(ss.isPalindrome(n));
