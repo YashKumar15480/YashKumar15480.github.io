@@ -21,7 +21,7 @@ public class ReverseInteger {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         Solution yash = new Solution();
-        // YASH KUMAR
+
         if (n == 0)
             System.out.print("0");
         if (n > 0)
