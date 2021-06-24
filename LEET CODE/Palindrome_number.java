@@ -25,7 +25,7 @@ public class Palindrome_number {
         Scanner sc = new Scanner(System.in);
         sc.close();
         int n = sc.nextInt();
-        Solution ss = new Solution();
+        Solution1 ss = new Solution1();
         System.out.println(ss.isPalindrome(n));
     }
 }
