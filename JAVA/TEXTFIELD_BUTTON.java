@@ -67,7 +67,7 @@ class output {
     }
 }
 
-public class buttton {
+public class TEXTFIELD_BUTTON {
     public static void main(String args[]) {
         output o = new output();
         o.show();
