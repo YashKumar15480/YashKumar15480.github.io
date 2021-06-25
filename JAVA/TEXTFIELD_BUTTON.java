@@ -21,6 +21,7 @@ class output {
 
         JTextField t2 = new JTextField(); // 3rd textFiled
         t2.setBounds(100, 185, 80, 20);
+        t2.setHorizontalAlignment(t2.CENTER);
 
         Button b1 = new Button("Click here"); // button 1
         b1.setBounds(100, 120, 80, 30);
