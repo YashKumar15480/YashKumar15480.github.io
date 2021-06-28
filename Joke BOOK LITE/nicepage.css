@@ -33738,6 +33738,8 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-footer .u-text-1 {
   width: 417px;
+  text-shadow: -2px 0 8px rgba(128,128,128,1);
+  animation-duration: 1000ms;
   margin: 49px auto;
 }
 @media (max-width: 1199px) {
