@@ -4,11 +4,11 @@ require_once('FormProcessor.php');
 
 $form = array(
     'subject' => 'New Form Submission',
-    'email_message' => 'HEY developer. You have a new form submission',
+    'email_message' => 'You have a new form submission',
     'success_redirect' => '',
     'sendIpAddress' => true,
     'email' => array(
-    'from' => '',
+    'from' => 'xboom15480@gmail.com',
     'to' => 'yaku15480@gmail.com'
     ),
     'fields' => array(
