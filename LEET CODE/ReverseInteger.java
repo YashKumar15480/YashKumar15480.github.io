@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution1 {
+class Solution123 {
     public int reverse(int x) {
         int rev = 0;
         Math.abs(x);
@@ -15,12 +15,12 @@ class Solution1 {
     }
 }
 
-public class yash1 {
+public class ReverseInteger {
     public static void main(String args[]) {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        Solution1 yash = new Solution1();
+        Solution123 yash = new Solution123();
 
         if (n == 0 || n >= 536871066)
             System.out.print("0");
