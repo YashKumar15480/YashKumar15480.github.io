@@ -18341,7 +18341,7 @@ a.pswp__share--download:hover {
 .u-layout-carousel .u-carousel-item .u-back-slide {
   position: relative;
 }
-.u-layout-carousel .u-over-slide {
+.u-layout-carousel:not(.u-gallery-slider) .u-over-slide {
   position: relative;
   height: auto;
 }
@@ -34019,10 +34019,6 @@ a.u-link.u-text-hover-grey-90:hover {
 
 
 /*end-variables sitestylecss*/
-.u-header {
-  background-image: none;
-}
-
 .u-header .u-sheet-1 {
   min-height: 112px;
 }
@@ -34051,6 +34047,14 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-nav-2 {
   font-size: 1.25rem;
 }
+
+.u-header .embed-responsive-1 {
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  height: 2063%;
+  top: -982%;
+}
 @media (max-width: 1199px) {
   .u-header .u-image-1 {
     width: 64px;
@@ -34060,41 +34064,81 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-menu-1 {
     width: auto;
   }
-}
 
+  .u-header .embed-responsive-1 {
+    height: 1492%;
+    top: -696%;
+  }
+}
+@media (max-width: 991px) {
+  .u-header .embed-responsive-1 {
+    height: 1143%;
+    top: -521%;
+  }
+}
 @media (max-width: 767px) {
   .u-header .u-image-1 {
     width: auto;
   }
-}
 
-.u-footer {
-  background-image: none;
+  .u-header .embed-responsive-1 {
+    height: 857%;
+    top: -379%;
+  }
 }
-
+@media (max-width: 575px) {
+  .u-header .embed-responsive-1 {
+    height: 540%;
+    top: -220%;
+  }
+}
 .u-footer .u-sheet-1 {
-  min-height: 120px;
+  min-height: 96px;
 }
 
 .u-footer .u-text-1 {
-  width: 417px;
   text-shadow: -2px 0 8px rgba(128,128,128,1);
   animation-duration: 1000ms;
-  margin: 49px auto;
+  width: 417px;
+  font-size: 1.5rem;
+  margin: 33px auto 36px;
+}
+
+.u-footer .embed-responsive-1 {
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  height: 2407%;
+  top: -1154%;
 }
 @media (max-width: 1199px) {
   .u-footer .u-sheet-1 {
     min-height: 99px;
+  }
+
+  .u-footer .embed-responsive-1 {
+    height: 1741%;
+    top: -820%;
   }
 }
 @media (max-width: 991px) {
   .u-footer .u-sheet-1 {
     min-height: 76px;
   }
+
+  .u-footer .embed-responsive-1 {
+    height: 1333%;
+    top: -617%;
+  }
 }
 @media (max-width: 767px) {
   .u-footer .u-sheet-1 {
     min-height: 57px;
+  }
+
+  .u-footer .embed-responsive-1 {
+    height: 1000%;
+    top: -450%;
   }
 }
 @media (max-width: 575px) {
@@ -34104,6 +34148,11 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-footer .u-text-1 {
     width: 340px;
+  }
+
+  .u-footer .embed-responsive-1 {
+    height: 630%;
+    top: -265%;
   }
 }
 
