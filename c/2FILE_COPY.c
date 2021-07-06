@@ -4,7 +4,7 @@
 #include <stdlib.h>
 int main()
 {
-FILE *fs,*ft;
+FILE *fs,*ft;{}
 char ch;
 
 //open file 1
