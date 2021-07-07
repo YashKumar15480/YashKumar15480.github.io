@@ -46,7 +46,7 @@
 }
 
 .u-section-1 .u-text-2 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-1 {
@@ -89,7 +89,7 @@
 }
 
 .u-section-1 .u-text-4 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-2 {
@@ -132,7 +132,7 @@
 }
 
 .u-section-1 .u-text-6 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-3 {
@@ -175,7 +175,7 @@
 }
 
 .u-section-1 .u-text-8 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-4 {
@@ -218,7 +218,7 @@
 }
 
 .u-section-1 .u-text-10 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-5 {
@@ -261,7 +261,7 @@
 }
 
 .u-section-1 .u-text-12 {
-  margin: 20px 2px 0 0;
+  margin: 20px 2px 0;
 }
 
 .u-section-1 .u-btn-6 {
@@ -298,6 +298,7 @@
 
   .u-section-1 .u-text-2 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-1 {
@@ -320,6 +321,7 @@
 
   .u-section-1 .u-text-4 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-2 {
@@ -341,6 +343,7 @@
 
   .u-section-1 .u-text-6 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-3 {
@@ -362,6 +365,7 @@
 
   .u-section-1 .u-text-8 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-4 {
@@ -383,6 +387,7 @@
 
   .u-section-1 .u-text-10 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-5 {
@@ -404,6 +409,7 @@
 
   .u-section-1 .u-text-12 {
     margin-right: auto;
+    margin-left: 0;
   }
 
   .u-section-1 .u-btn-6 {
