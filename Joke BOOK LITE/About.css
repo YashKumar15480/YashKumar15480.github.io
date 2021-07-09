@@ -1,10 +1,10 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 518px;
+  min-height: 541px;
 }
 
 .u-section-1 .u-list-1 {
   grid-template-rows: auto;
-  margin-top: 29px;
+  margin-top: 49px;
   margin-bottom: 0;
   height: auto;
 }
@@ -107,7 +107,7 @@
   width: 641px;
   min-height: 76px;
   animation-duration: 1000ms;
-  margin: -10px auto 0 249px;
+  margin: -10px auto 3px 249px;
 }
 
 .u-section-1 .u-btn-3 {
@@ -138,7 +138,7 @@
 
 @media (max-width: 991px) {
   .u-section-1 .u-group-1 {
-    margin-bottom: 0;
+    margin-bottom: 3px;
     margin-left: 79px;
   }
 }
