@@ -1,6 +1,7 @@
 .u-section-1 {
-  background-image: none;
+  background-image: url("images/man-touching-abstract-global-network-connection-structure-networking-data-exchanges-customer-dark-background-communication-187466143.jpg");
   min-height: 1206px;
+  background-position: 50% 50%;
 }
 
 .u-section-1 .u-text-1 {
@@ -18,7 +19,6 @@
 
 .u-section-1 .u-layout-wrap-1 {
   width: 1140px;
-  background-image: linear-gradient(#f5d654, #db545a);
   margin: -546px auto 0;
 }
 
@@ -37,6 +37,7 @@
   margin-bottom: 0;
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
   filter: brightness(0.95);
+  animation-duration: 1000ms;
 }
 
 .u-section-1 .u-text-2 {
@@ -67,6 +68,7 @@
 
 .u-section-1 .u-layout-cell-3 {
   min-height: 154px;
+  background-image: none;
 }
 
 .u-section-1 .u-container-layout-3 {
@@ -88,6 +90,7 @@
   margin-bottom: 0;
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
   filter: brightness(0.95);
+  animation-duration: 1000ms;
 }
 
 .u-section-1 .u-text-3 {
@@ -135,6 +138,7 @@
   height: 214px;
   width: 361px;
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
+  animation-duration: 1000ms;
   margin: 0 2px 0 0;
 }
 

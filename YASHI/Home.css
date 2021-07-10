@@ -1,5 +1,6 @@
 .u-section-1 {
-  background-image: none;
+  background-image: url("images/man-touching-abstract-global-network-connection-structure-networking-data-exchanges-customer-dark-background-communication-187466143.jpg");
+  background-position: 50% 50%;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -13,23 +14,23 @@
 }
 
 .u-section-1 .u-layout-wrap-1 {
-  width: 1100px;
-  margin: 60px auto;
+  width: 1184px;
+  margin: 18px -64px 60px auto;
 }
 
 .u-section-1 .u-layout-cell-1 {
-  min-height: 630px;
+  min-height: 661px;
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 50px 31px;
+  padding: 50px 19px;
 }
 
 .u-section-1 .u-text-1 {
   font-size: 4.375rem;
   text-transform: none;
   font-family: Oswald, sans-serif;
-  margin: 98px 9px 0;
+  margin: 98px 22px 0;
 }
 
 .u-section-1 .u-text-2 {
@@ -38,20 +39,10 @@
   font-style: italic;
   font-weight: 400;
   text-transform: none;
-  margin: 30px 18px 0 0;
-}
-
-.u-section-1 .u-text-3 {
-  margin: 14px 149px 0 0;
+  margin: 30px 31px 0 13px;
 }
 
 .u-section-1 .u-btn-1 {
-  background-image: none;
-  border-style: none none solid;
-  padding: 0;
-}
-
-.u-section-1 .u-btn-2 {
   background-image: none;
   border-style: solid;
   text-transform: uppercase;
@@ -59,23 +50,27 @@
   letter-spacing: 2px;
   animation-duration: 1500ms;
   box-shadow: -2px -2px 8px 0 rgba(128,128,128,1);
-  margin: 20px auto 0 0;
+  margin: 54px auto 0 0;
   padding: 15px 49px 15px 48px;
 }
 
+.u-section-1 .u-layout-cell-2 {
+  min-height: 661px;
+  animation-duration: 1000ms;
+}
+
 .u-section-1 .u-image-1 {
-  min-height: 630px;
   background-image: url("images/unnamed.png");
-  background-position: 50% 50%;
 }
 
 .u-section-1 .u-container-layout-2 {
+  box-shadow: 0 0 8px 0 rgba(128,128,128,1);
   padding: 50px;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 643px;
+    min-height: 484px;
   }
 
   .u-section-1 .u-shape-1 {
@@ -85,10 +80,12 @@
 
   .u-section-1 .u-layout-wrap-1 {
     width: 940px;
+    margin-right: auto;
+    margin-left: 100px;
   }
 
   .u-section-1 .u-layout-cell-1 {
-    min-height: 538px;
+    min-height: 525px;
   }
 
   .u-section-1 .u-text-1 {
@@ -97,31 +94,30 @@
   }
 
   .u-section-1 .u-text-2 {
+    margin-left: 0;
     margin-right: 0;
   }
 
-  .u-section-1 .u-text-3 {
-    margin-right: 69px;
-  }
-
-  .u-section-1 .u-image-1 {
-    min-height: 538px;
+  .u-section-1 .u-layout-cell-2 {
+    background-position: 50% 50%;
+    min-height: 525px;
   }
 }
 
 @media (max-width: 991px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 689px;
+    min-height: 361px;
   }
 
   .u-section-1 .u-shape-1 {
-    width: 357px;
-    left: auto;
+    width: 358px;
+    left: 207px;
     right: 156px;
   }
 
   .u-section-1 .u-layout-wrap-1 {
     width: 720px;
+    margin-left: 210px;
   }
 
   .u-section-1 .u-layout-cell-1 {
@@ -129,19 +125,17 @@
   }
 
   .u-section-1 .u-container-layout-1 {
-    padding: 30px 30px 30px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 0;
   }
 
   .u-section-1 .u-text-1 {
     font-size: 3.75rem;
   }
 
-  .u-section-1 .u-text-3 {
-    margin-right: 0;
-  }
-
-  .u-section-1 .u-image-1 {
-    min-height: 412px;
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 402px;
   }
 
   .u-section-1 .u-container-layout-2 {
@@ -151,19 +145,18 @@
 
 @media (max-width: 767px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 1091px;
+    min-height: 662px;
   }
 
   .u-section-1 .u-shape-1 {
     width: 306px;
-    left: 0;
+    left: 117px;
     right: 0;
   }
 
   .u-section-1 .u-layout-wrap-1 {
     width: 540px;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    margin-left: 300px;
   }
 
   .u-section-1 .u-container-layout-1 {
@@ -175,8 +168,8 @@
     width: auto;
   }
 
-  .u-section-1 .u-image-1 {
-    min-height: 618px;
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 603px;
   }
 
   .u-section-1 .u-container-layout-2 {
@@ -187,18 +180,20 @@
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 963px;
+    min-height: 439px;
   }
 
   .u-section-1 .u-shape-1 {
     width: 201px;
+    left: 70px;
   }
 
   .u-section-1 .u-layout-wrap-1 {
     width: 340px;
+    margin-left: 400px;
   }
 
-  .u-section-1 .u-image-1 {
-    min-height: 389px;
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 380px;
   }
 }

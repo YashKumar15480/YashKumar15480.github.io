@@ -1,6 +1,7 @@
 .u-section-1 {
-  background-image: linear-gradient(#db545a, #f1c50e);
+  background-image: url("images/man-touching-abstract-global-network-connection-structure-networking-data-exchanges-customer-dark-background-communication-187466143.jpg");
   min-height: 1206px;
+  background-position: 50% 50%;
 }
 
 .u-section-1 .u-text-1 {
@@ -34,6 +35,7 @@
   height: 208px;
   width: 366px;
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
+  animation-duration: 1000ms;
   margin: 0 -3px 0 auto;
 }
 
@@ -85,6 +87,7 @@
   margin-top: 0;
   margin-bottom: 0;
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
+  animation-duration: 1000ms;
 }
 
 .u-section-1 .u-text-3 {
@@ -136,6 +139,7 @@
   width: 358px;
   filter: brightness(0.75);
   box-shadow: 0 0 8px 0 rgba(128,128,128,1);
+  animation-duration: 1000ms;
   margin: 0 auto;
 }
 
@@ -168,7 +172,7 @@
   text-transform: none;
   font-weight: 400;
   width: 219px;
-  margin: 37px auto 60px;
+  margin: 37px auto 0;
 }
 
 .u-section-1 .u-btn-4 {
@@ -177,9 +181,18 @@
   padding: 0;
 }
 
+.u-section-1 .u-btn-5 {
+  border-style: none;
+  animation-duration: 1000ms;
+  box-shadow: 0 0 8px 0 rgba(128,128,128,1);
+  background-image: none;
+  margin: 30px auto 60px;
+  padding: 8px 28px 8px 27px;
+}
+
 @media (max-width: 1199px) {
   .u-section-1 {
-    min-height: 1066px;
+    min-height: 831px;
   }
 
   .u-section-1 .u-shape-1 {
@@ -253,7 +266,7 @@
 
 @media (max-width: 991px) {
   .u-section-1 {
-    min-height: 1316px;
+    min-height: 1081px;
   }
 
   .u-section-1 .u-text-1 {
@@ -307,7 +320,7 @@
 
 @media (max-width: 767px) {
   .u-section-1 {
-    min-height: 1311px;
+    min-height: 1076px;
   }
 
   .u-section-1 .u-text-1 {
@@ -382,7 +395,7 @@
 
 @media (max-width: 575px) {
   .u-section-1 {
-    min-height: 1011px;
+    min-height: 776px;
   }
 
   .u-section-1 .u-text-1 {
