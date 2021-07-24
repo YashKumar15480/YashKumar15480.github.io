@@ -21,3 +21,5 @@ public class Question12 {
         a.show();
     }
 }
+// Hellow
+// JAVA
