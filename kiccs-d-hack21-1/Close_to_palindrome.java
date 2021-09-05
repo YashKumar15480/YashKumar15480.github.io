@@ -42,4 +42,4 @@ public class solutions {
                 System.out.print(i);
         }
     }
-}
+} // yash
