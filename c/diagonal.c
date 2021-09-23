@@ -41,5 +41,5 @@ int main()
               }
           }
           printf("sum of Second diagonal is => %d",sec);  
- return 0;
+ return 0;//
 }
