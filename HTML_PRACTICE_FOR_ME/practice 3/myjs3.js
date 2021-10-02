@@ -1,4 +1,4 @@
 function nn() {
-    document.getElementById("yyy").innerHTML = "yash"
- 
+    document.getElementById("yy1").innerHTML = "yash"
+    document.getElementById("sir").innerHTML = "Kumar"
 }
