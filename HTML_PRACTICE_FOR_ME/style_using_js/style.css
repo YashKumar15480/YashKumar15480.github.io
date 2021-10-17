@@ -1,0 +1,13 @@
+p:hover{
+    color: aqua;
+}
+button{
+  background-color: bisque;
+  box-shadow: 10px;
+}
+button:hover{
+    background-color: aquamarine;
+    text-decoration-thickness: 10px;
+    text-shadow:2px;
+    color: blue;
+}
