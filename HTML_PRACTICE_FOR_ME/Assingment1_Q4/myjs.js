@@ -55,6 +55,7 @@ customer_profile.addEventListener("submit",function(){
     alert("Hotel booked successfully");
 });
 
+
 //appending all in form
 customer_profile.appendChild(document.createTextNode("Name "));
 customer_profile.appendChild(Name);
