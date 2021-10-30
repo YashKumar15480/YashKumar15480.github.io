@@ -1,0 +1,15 @@
+table{
+    margin-left: 20%;
+    margin-right: 10%;
+}
+h1{
+    text-align: center;
+}
+td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+img{
+    width: 500px;
+}
