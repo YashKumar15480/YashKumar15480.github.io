@@ -3,5 +3,5 @@ function goto1() {
 }
 // function c()
 // {
-    // yash
+    
 // }
