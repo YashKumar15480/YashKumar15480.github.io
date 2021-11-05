@@ -4,13 +4,127 @@
         <title>Assingment_1_Q4</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
    <h1>Assingment_1_Q4</h1>
+   <h5>Design a web page for data entry of customer’s in a Hotel. The customer information should include Name, Address, Age, gender, Room Type (A/C, Non- A/C or Deluxe), Type of payment (Cash, Credit/Debit Card or Coupons) with validation by using JavaScript</h5>
 
-  
-    <script src="myjs.js"></script>
-  
+
+   <form action = "https://www.w3schools.com/tags/att_input_type_radio.asp" method="post" name="myform" onsubmit="return func1()" >
+    <table>
+        <tr>
+            <td>
+                <label for="uname">Name</label>
+            </td>
+            <td>
+                <input type="text" id="uname" name="username" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="uemail">Email</label>
+            </td>
+            <td>
+                <input type="email" id="email" name="usermail" required>
+                <button type="button" onclick="func1()">Check</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="age">Age</label>
+            </td>
+            <td>
+                <input type="number" name="userage" id="age" size="2" min="16" max="101" required> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Country</label>
+            </td>
+            <td>
+                <input type="text" value="India" name="country" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    <label for="refff">Reffrence code</label>
+            </td>
+            <td>
+                    <input type="" id="refff" name="refff" >
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                <label>Room Type</label>
+            </td>
+            <td>
+                <label><input value ="ac" type = "radio" name = "roomtype" required> AC</label>
+                <label><input value ="nac" type = "radio" name = "roomtype" required> Non-AC</label>
+                <label><input value ="dulex" type="radio" name="roomtype" required>DULEX</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Gender</label>
+            </td>
+            <td>
+                <label><input type="radio" value="f" name="gender" required> Female</label>
+                <label><input value="m" type="radio" name="gender" required> Male</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    <label for="city">Room Type </label>
+            </td>
+            <td>
+                    <select required id="city" name="city" >
+                        <option disabled selected >--Choose Rooms Types--</option>
+                            <optgroup label="Regulars">
+                                <option>Single Bed</option>
+                                <option>Double Bed</option>
+                                <option>Triple Bed</option>
+                                <option>Dulex with 4 Beds</option>
+                            </optgroup>
+                            <optgroup label="dulex">
+                                <option>Premium Double Beds</option>
+                                <option>5 Star Double Beds</option>
+                                <option>Couples Special Double Beds</option>
+                                <option>Premium Double Beds</option>
+                            </optgroup>
+                    </select>
+            </td>
+        </tr>
+        <tr >
+            <td>
+                <label >Payment Type</label>
+            </td>
+            <td id="one">
+                <label><input value ="cash" type = "radio" name = "pt" required> CASH</label><br>
+                <label><input value ="cnd" type = "radio" name = "pt" required> CREDIT / DEBIT CARD</label><br>
+                <label><input value ="cupon" type="radio" name="pt" required>CUPONS</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Address</label>
+            </td>
+            <td>
+                <textarea rows="5" cols="40" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit" >
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+</form>
+  <script src="myjs.js">
+      
+  </script>
     </body>
 </html>
