@@ -8,8 +8,14 @@
     </head>
     <body>
 
+
+
+
         <h1 style="color: brown;">Enter Your Details below</h1>
-    <form action="https://formspree.io/f/xpzkevdp" method="post">   
+
+<p>Design a web page to take bio-data information of current employees in any organization with validation using JavaScript.</p>
+        
+    <form action="https://www.w3schools.com/jsref/dom_obj_radio.asp" method="post" onsubmit="return func11()" name="myform">   
         <label for="Fname" id="one">First name :</label>
         <input type="text" id="Fname" name="Fname"><br><br>
 
@@ -17,13 +23,13 @@
         <input type="text" id="Lname" name="Lname"><br><br>
 
         <label for="AGE">AGE :</label>
-        <input type="number" id="Age" name="Age"><br><br>
+        <input type="number" id="Age" name="Age" min="22" max="65"><br><br>
 
         <label for="DOJ">DATE OF JOINING :</label>
         <input type="datetime" name="DOJ" id="DOJ"><br><br>
 
         <label for="CS">Current Salary :</label>
-        <input type="number" name="CS" id="CS"><br><br>
+        <input type="number" name="CS" id="CS" min="6000" max="5000000" ><br><br>
 
         <label for="DEPT">Department :</label>
         <input type="text" name="DEPT" id="DEPT"><br><br>
@@ -32,9 +38,9 @@
         <input type="text" name="JobType" id="JobType"><br><br>
 
         <label for="IDcard">DEPARMENT ID :</label>
-        <input type="number" name="IDcard" id="IDcard"><br><br>
+        <input type="number" name="IDcard" id="IDcard" min="999999" max="99999999999"><br><br>
 
-        <input type="submit" value="Submit" onclick="goto1()">
+        <input type="submit" value="Submit">
 
 
     </form>
