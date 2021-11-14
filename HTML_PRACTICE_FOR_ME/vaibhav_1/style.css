@@ -1,0 +1,46 @@
+
+header{
+    text-align: center;
+    border: 2px solid black ;
+}
+
+#one{
+    float: left;
+    height: 15cm;
+    width: 55%;
+    margin-bottom: 10%;
+    border: 2px solid black;
+    text-align: center;
+}
+#two{
+    width: 44%;
+    height: 6cm;
+    float: right;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#three{
+    width: 44%;
+    height: 7cm;
+    float: right;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#four{
+    margin-top: 0.5cm;
+    margin-right: 0.5cm;
+    width: 10%;
+    height:2cm; 
+    padding-right: 1cm ;
+    float: right;
+    border: 2px solid black;
+    border-radius: 20%;
+    text-align: center;
+    font-size: small;
+}
+div{
+    border: 6px solid black;
+    height: 19cm;
+}
