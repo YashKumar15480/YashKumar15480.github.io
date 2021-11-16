@@ -19,3 +19,4 @@ else if(JobType == ""){alert("Enter Job Type"); return false;}
 else if(idcard == "") {alert("Enter ID card Number"); return false;}
 else {alert("Please check all deatails. All details are re-directed to HOD : yash.2023mca1038@kiet.edu"); return true;}
 }
+// yash
