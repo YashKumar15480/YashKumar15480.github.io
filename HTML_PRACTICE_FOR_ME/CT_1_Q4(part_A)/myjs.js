@@ -16,6 +16,6 @@ console.log(st[3].concat(st2));
 (st[2] == st2[1])? console.log("TRUE"):console.log("FALSE");
 (st[2] === st2[1])? console.log("TRUE"):console.log("False");
 
-
+//yash
 
 
