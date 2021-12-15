@@ -74,25 +74,25 @@
 
 
 <h1 align="center">MedStock</h1>
-<form action="yash.php" method="post" name="form1">
+<form action="#" method="post" name="form1">
     <div id="personal-details">
     <h2 align="center">Medicine Details</h2>
         <table width="100%">
             <tr>
                 <td>Medicine Name</td>
                 <td>
-                    <input type="text" placeholder="Medicine Name" size="25">
+                    <input type="text" placeholder="Medicine Name" size="25" name="medname">
                 </td>
                 <td>Company Name</td>
                 <td>
-                    <input type="text" placeholder="Manufacturing Company" size="25">
+                    <input type="text" placeholder="Manufacturing Company" size="25" name="cname">
                 </td>
             </tr>
    
             <tr>
                 <td>Date</td>
                 <td>
-                    <input type="date">
+                    <input type="date" name="ddate">
                 </td>
                 <td>Dealer ID</td>
                 <td>
@@ -116,7 +116,7 @@
                 </td>
                 <td>Dealer's Email Id</td>
                 <td>
-                    <input type="text" placeholder="your id@gmail.com" size="25">
+                    <input type="email" placeholder="id@gmail.com" size="25">
                 </td>
             </tr>
             <tr>
@@ -127,7 +127,7 @@
                 </td>
                 <td>Dealer's Phone number</td>
                 <td>
-                    <input type="text" placeholder="your id@gmail.com" size="25">
+                    <input type="number" placeholder="Phone Number" size="25">
                 </td>
             </tr>
             
@@ -145,17 +145,17 @@
             <tr>
                 <td>Price per Unit</td>
                 <td>
-                    <input type="number" placeholder="Price of whole box" size="25">
+                    <input type="number" placeholder="INR" min="0" max="99999" size="25">
                 </td>
                 <td>Price per Tablet</td>
                 <td>
-                    <input type="number" placeholder="Price of single tablet" size="25">
+                    <input type="number" placeholder="INR" min="0" max="99999" size="25">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td colspan="2">
-                    <input type="Submit" value="Submit" class="button">
+                    <input type="Submit" onclick="func2()" value="Submit" class="button">
                 </td>
                 <td colspan="2">
                     <input type="Reset" value="Reset" class="button">
@@ -188,5 +188,6 @@
       </div><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-white u-text-1">Pharmacy Store Mangement</p>
       </div></footer>
+      <script src="myjs.js"></script>
   </body>
 </html>

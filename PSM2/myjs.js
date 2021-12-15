@@ -1,23 +1,21 @@
-// var MongoClient = require('mongodb').MongoClient;
-// var url = "mongodb://localhost:27017/mydb1";
+function func2(){
 
-// MongoClient.connect(url, function(err, db) {
-//   if (err) throw err;
-//  else console.log("Database created!");
-//   db.close(); 
-// });
+      let one = document.forms["form1"]["medname"].value
+      let two = document.forms["form1"]["cname"].value
+      let three = document.forms["form1"]["ddate"].value
+      let four = document.forms["form1"]["medname"].value
+      let five = document.forms["form1"]["medname"].value
+      let six = document.forms["form1"]["medname"].value
 
-var MongoClient = require('mongodb').MongoClient;  
-var url = "mongodb://localhost:27017/testing1";  
-MongoClient.connect(url, function(err, db) {  
-if (err) throw err;  
-// var myobj = { name: "Ajeet Kumar", age: "28", address: "Delhi" };  
-// db.collection("employees").insertOne(myobj, function(err, res) {  
-// if (err) throw err;  
-db.comments.insert({
-  'name':"yash",
-  'age':44
-})
-console.log("1 record inserted");  
-db.close();  
-});  
+      let seven = document.forms["form1"]["medname"].value
+      let eight = document.forms["form1"]["medname"].value
+      let nine = document.forms["form1"]["medname"].value
+      let ten = document.forms["form1"]["medname"].value
+      let eleven = document.forms["form1"]["medname"].value
+      let twl = document.forms["form1"]["medname"].value
+
+      alert("Your data has been stored in database")
+    
+
+
+}
