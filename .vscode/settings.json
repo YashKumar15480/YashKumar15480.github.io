@@ -1,3 +1,7 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "java.project.sourcePaths": [
+        "GoG_Codes",
+        "JAVA"
+    ]
 }
