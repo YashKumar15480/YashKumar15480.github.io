@@ -24,9 +24,6 @@ public class Count_the_Zeros {
     }
 }
 
-// } Driver Code Ends
-
-// User function Template for Java
 
 class Solution {
     int countZeroes(int[] arr, int n) {
