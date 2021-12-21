@@ -30,7 +30,7 @@ class solutionn {
 public class Anagram {
     public static void main(String args[]) {
         solutionn n1 = new solutionn();
-        // n1.isfinds();
+
         System.out.println("Case Sensitive program \n To find given 2 string is Anagram or Not");
 
         System.out.println("Strings Anagram =>>" + n1.isfinds());
