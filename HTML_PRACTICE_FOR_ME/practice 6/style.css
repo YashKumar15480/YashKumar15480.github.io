@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 1cm;
+    padding: 1cm;
+}
+label:hover{
+    text-decoration: underline 2px saddlebrown;
+}
+form{
+    border: 1px solid blueviolet;
+    padding: 0.5cm;
+}
