@@ -32,6 +32,6 @@ else console.log("false");
 
 //email validation 
 
-let email = "123@123.123"
-if(/[a-z,A-z,0-9_\-]+[@][a-z]+[\.][a-z]{2,3}/.test(email))console.log("Valid email");
+let email = "yash.2023mca1038@kiet.edu"
+if(/[a-z,A-Z,0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}/.test(email))console.log("Valid email");
 else console.log("not a valid email");
