@@ -35,3 +35,9 @@ else console.log("false");
 let email = "yash.2023mca1038@kiet.edu"
 if(/[a-z,A-Z,0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}/.test(email))console.log("Valid email");
 else console.log("not a valid email");
+
+//first character captial rest any small letters
+
+let namee  = "Yash"
+if(/[A-Z][a-z,^A-Z]+/.test(namee)) console.log("yes");
+else console.log("No");
