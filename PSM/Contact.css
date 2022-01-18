@@ -1,0 +1,65 @@
+ .u-section-1 {
+  background-image: linear-gradient(0deg, rgba(143,71,201,0.3), rgba(143,71,201,0.3)), url("images/file-20190129-108364-17hlc1x.jpg");
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 549px;
+}
+
+.u-section-1 .u-text-1 {
+  text-decoration: underline !important;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  margin: 60px auto 0;
+}
+
+.u-section-1 .u-form-1 {
+  background-image: none;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  height: 347px;
+  width: 696px;
+  margin: 30px auto 60px;
+}
+
+.u-section-1 .u-input-1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.u-section-1 .u-input-2 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.u-section-1 .u-input-3 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: solid;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+}
+
+@media (max-width: 1199px) {
+   .u-section-1 {
+    background-position: 50% 50%;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-form-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-form-1 {
+    width: 340px;
+  }
+}
