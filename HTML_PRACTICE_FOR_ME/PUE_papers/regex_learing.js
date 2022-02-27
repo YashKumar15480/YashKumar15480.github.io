@@ -41,4 +41,3 @@ else console.log("not a valid email");
 let namee  = "Yash"
 if(/[A-Z][a-z,^A-Z]+/.test(namee)) console.log("yes");
 else console.log("No");
-// yashyash
