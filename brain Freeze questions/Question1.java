@@ -10,3 +10,4 @@ public class Question1 {
     }
 }
 // 10
+//created by yash kumar
