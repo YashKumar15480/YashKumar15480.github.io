@@ -106,5 +106,5 @@ public class aboutNumber {
         System.out.println("Number is PRIME = " + (n1.isPrime(numm)));
         System.out.println("Number is ARMSTRONG = " + (n1.isArmstrong(numm)));
     }
-
+// yash
 }
