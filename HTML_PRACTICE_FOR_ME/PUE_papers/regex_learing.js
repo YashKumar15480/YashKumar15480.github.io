@@ -42,3 +42,9 @@ let namee  = "Yash"
 if(/[A-Z][a-z,^A-Z]+/.test(namee)) console.log("yes");
 else console.log("No");
 // jhfjbgyhng
+
+let string1 = "abca";
+let len = string1.length - 1;
+let check = string1.charAt(0);
+if(/[a-z]*[check]/.test(string1)) console.log("true");
+else console.log("false");
