@@ -49,3 +49,4 @@ let check = string1.charAt(0);
 if(/[a-z]*[check]/.test(string1)) console.log("true");
 else console.log("false");
 // yash
+// yash
