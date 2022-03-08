@@ -13,10 +13,7 @@ function regexVar() {
         return re;
     }
     
-     /*
-     * Do not remove the return statement
-     */
-    
+
     
     return re;
 }
