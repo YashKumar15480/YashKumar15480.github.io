@@ -17,4 +17,3 @@ function regexVar() {
     
     return re;
 }
-// yash
