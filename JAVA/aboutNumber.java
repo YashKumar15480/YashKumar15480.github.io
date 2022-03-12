@@ -74,6 +74,7 @@ class Number {
             count++;
         }
         // System.out.println(count);
+        // yash
 
         int i = (int) num;
         while (i > 0) {
@@ -106,5 +107,5 @@ public class aboutNumber {
         System.out.println("Number is PRIME = " + (n1.isPrime(numm)));
         System.out.println("Number is ARMSTRONG = " + (n1.isArmstrong(numm)));
     }
-// yash
+    // yash
 }
