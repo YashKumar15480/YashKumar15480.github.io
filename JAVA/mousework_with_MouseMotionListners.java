@@ -7,7 +7,7 @@ class yy extends MouseInputAdapter {
     int i = 0;
 
     public void mouseMoved(MouseEvent e) {
-        // TODO Auto-generated method stub
+
         System.out.println("Moved X = " + e.getX() + " Y = " + e.getY());
     }
 
