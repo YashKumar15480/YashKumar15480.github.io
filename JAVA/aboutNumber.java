@@ -68,7 +68,7 @@ class Number {
         this.num = num;
         int count = 0;
         int mum = (int) num;
-        // double i = num;
+
         while (mum != 0) {
             mum = mum / 10;
             count++;
