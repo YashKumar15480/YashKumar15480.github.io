@@ -73,8 +73,6 @@ class Number {
             mum = mum / 10;
             count++;
         }
-        // System.out.println(count);
-        // yash
 
         int i = (int) num;
         while (i > 0) {
