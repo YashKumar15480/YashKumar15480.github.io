@@ -26,5 +26,5 @@ public class mousework_with_MouseMotionListners extends MouseInputAdapter {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.addMouseMotionListener(new yy());
     }
-    // yash
+
 }
