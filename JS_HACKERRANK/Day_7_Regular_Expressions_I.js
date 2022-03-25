@@ -12,7 +12,7 @@ function regexVar() {
         if(string1.charAt(0) == string.charAt(string1.length-1))
         return re;
     }
-    // do not remove return statement
+
 
     
     return re;
