@@ -9,7 +9,7 @@ function performOperation(secondInteger, secondDecimal, secondString) {
     // Declare a variable named 'firstString' and initialize with the string "HackerRank".
     const firstString = 'HackerRank ';
     
-    // Write code that uses console.log to print the sum of the 'firstInteger' and 'secondInteger' (converted to a Number        type) on a new line.
+   
   
     const integerAdd = (firstInteger)+(+secondInteger);
     const decimalAdd = (firstDecimal)+(+secondDecimal);
