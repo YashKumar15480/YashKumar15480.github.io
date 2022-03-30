@@ -6,7 +6,7 @@ function performOperation(secondInteger, secondDecimal, secondString) {
     // Declare a variable named 'firstDecimal' and initialize with floating-point value 4.0.
     const firstDecimal = 4.0;
     
-    // Declare a variable named 'firstString' and initialize with the string "HackerRank".
+   
     const firstString = 'HackerRank ';
     
 //    yash
