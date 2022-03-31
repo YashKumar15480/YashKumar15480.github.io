@@ -9,8 +9,7 @@ function performOperation(secondInteger, secondDecimal, secondString) {
    
     const firstString = 'HackerRank ';
     
-//    yash
-  
+   
     const integerAdd = (firstInteger)+(+secondInteger);
     const decimalAdd = (firstDecimal)+(+secondDecimal);
     
