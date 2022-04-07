@@ -11,7 +11,7 @@ class solutionn {
         System.out.print("enter string 1 =>");
         String a = nn.nextLine(); // taking input in string a
         System.out.print("enter string 2 =>");
-        String b = nn.nextLine();
+        String b = nn.nextLine(); // taking input in string b
 
         if (a.length() == b.length()) {
             for (i = 0; i < a.length(); i++) {
