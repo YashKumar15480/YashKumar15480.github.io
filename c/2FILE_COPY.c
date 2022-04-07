@@ -33,8 +33,8 @@ else printf("COPIED SUCCESFULL"); // elese copied succesfully
      else fputc(ch,ft);
  }
 
-fclose(fs);  //clossing of both files
-fclose(ft);
+fclose(fs);  //clossing of first files
+fclose(ft); //clossing second file 
 
 
 return 0;
