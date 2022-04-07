@@ -7,9 +7,9 @@ class solutionn {
 
     boolean isfinds() {
         int i, j, sum1 = 0, sum2 = 0, temp;
-        Scanner nn = new Scanner(System.in);
+        Scanner nn = new Scanner(System.in); // creating a scanner object
         System.out.print("enter string 1 =>");
-        String a = nn.nextLine();
+        String a = nn.nextLine(); // taking input in string a
         System.out.print("enter string 2 =>");
         String b = nn.nextLine();
 
