@@ -4,4 +4,3 @@ function factorial(n){
     for(let i=n;i>=1;i--)sum = sum *i;
     return sum;
 }
-// yash
