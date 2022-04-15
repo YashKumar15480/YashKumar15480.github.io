@@ -9,4 +9,3 @@ public class ASCII_Riddle {
     System.out.print(strr);
   }
 }
-// yash kumar
