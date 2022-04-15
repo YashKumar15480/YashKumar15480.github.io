@@ -23,8 +23,7 @@ if (ft==NULL)
     fclose(fs);
     exit(0);
   }
-else printf("COPIED SUCCESFULL"); // elese copied succesfully
-
+else printf("COPIED SUCCESFULL"); 
 
   while(1)
  {
