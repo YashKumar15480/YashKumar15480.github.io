@@ -36,6 +36,6 @@ else printf("COPIED SUCCESFULL"); // elese copied succesfully
 fclose(fs);  //clossing of first files
 fclose(ft); //clossing second file 
 
-
+// yash
 return 0;
 }
