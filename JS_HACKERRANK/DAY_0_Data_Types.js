@@ -16,7 +16,7 @@ function performOperation(secondInteger, secondDecimal, secondString) {
     console.log(integerAdd);
     console.log(decimalAdd);
     console.log(firstString+""+secondString);
-    //yash
+
     
    
 }
