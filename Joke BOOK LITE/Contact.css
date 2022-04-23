@@ -82,7 +82,7 @@
     width: 540px;
   }
 }
-
+/* do not touch this section  */
 @media (max-width: 575px) {
   .u-section-1 .u-text-1 {
     width: 340px;
