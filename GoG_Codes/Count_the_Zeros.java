@@ -24,6 +24,7 @@ public class Count_the_Zeros {
     }
 }
 
+// yash
 class Solution {
     int countZeroes(int[] arr, int n) {
         int count = 0;
@@ -34,5 +35,5 @@ class Solution {
 
         return count;
     }
- 
+
 }
