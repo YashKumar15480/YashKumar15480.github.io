@@ -9,7 +9,7 @@ class output {
 
         f.setLayout(null);
         f.setLocationRelativeTo(null);
-
+        // java
         JTextField tf = new JTextField(); // 1st textField
         tf.setBounds(60, 50, 170, 20);
 
