@@ -50,7 +50,7 @@ class output {
             System.out.println("Total charater pressed => " + (s.length()));
             t2.setText(Integer.toString(s.length()));
         });
-        // total 4 actions perfrom respected to 4 buttons
+
         f.add(l1);
         f.add(tf);
         f.add(tt); // Add each component and container to frame
