@@ -53,7 +53,7 @@ class output {
 
         f.add(l1);
         f.add(tf);
-        f.add(tt); // Add each component and container to frame
+        f.add(tt);
         f.add(b1);
         f.add(b2);
         f.add(b3);
