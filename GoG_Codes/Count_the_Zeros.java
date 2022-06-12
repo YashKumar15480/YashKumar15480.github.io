@@ -24,6 +24,7 @@ public class Count_the_Zeros {
     }
 }
 
+// java
 class Solution {
     int countZeroes(int[] arr, int n) {
         int count = 0;
