@@ -59,8 +59,9 @@ class output {
         f.add(b3);
         f.add(b4);
         f.add(t2);
-        f.setVisible(true);
+        f.setVisible(true);//
 
+        // yash
     }
 
     private String length(String text) {
