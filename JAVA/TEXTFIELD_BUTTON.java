@@ -61,7 +61,6 @@ class output {
         f.add(t2);
         f.setVisible(true);//
 
-        // yash
     }
 
     private String length(String text) {
