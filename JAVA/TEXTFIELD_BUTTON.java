@@ -38,6 +38,7 @@ class output {
         b4.setBounds(1, 150, 100, 30);
         b4.setBackground(Color.CYAN);
         // Actions performed
+        // yash kumar mca
         b1.addActionListener((ActionEvent e) -> tt.setText(tf.getText()));
         b2.addActionListener((ActionEvent e) -> System.exit(0));
         b3.addActionListener((ActionEvent e) -> {
