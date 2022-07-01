@@ -1,4 +1,3 @@
-// package brain Freeze questions;
 
 public class Question2 {
     public static void main(String argv[]) {
