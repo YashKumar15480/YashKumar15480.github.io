@@ -17,9 +17,6 @@ class Solution {
     }
 }
 
-/**
- * Count_Primes
- */
 public class Count_Primes {
 
     public static void main(String[] args) {
