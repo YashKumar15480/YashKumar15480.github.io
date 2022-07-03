@@ -4,9 +4,6 @@ class Solution143 {
     }
 }
 
-/**
- * Defanging_an_IP_Address
- */
 public class Defanging_an_IP_Address {
 
     public static void main(String[] args) {
