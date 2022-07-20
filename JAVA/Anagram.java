@@ -5,7 +5,6 @@ class solutionn {
     boolean s2 = false;
     String a, b;
 
-    // yash
     boolean isfinds() {
         int i, j, sum1 = 0, sum2 = 0, temp;
         Scanner nn = new Scanner(System.in); // creating a scanner object
