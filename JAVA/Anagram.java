@@ -13,7 +13,7 @@ class solutionn {
         System.out.print("enter string 2 =>");
         String b = nn.nextLine();
 
-        if (a.length() == b.length()) { // loop
+        if (a.length() == b.length()) {
             for (i = 0; i < a.length(); i++) {
                 sum1 = sum1 + (int) a.charAt(i);
                 sum2 = sum2 + (int) b.charAt(i);
