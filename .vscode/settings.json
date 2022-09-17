@@ -1,7 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "java.project.sourcePaths": [
+        "JAVA",
         "GoG_Codes",
-        "JAVA"
+        "Accenture Primers Learning ASE"
     ]
 }
