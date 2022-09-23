@@ -7,4 +7,3 @@ public class Question2 {
         System.out.print(arr[5] + ":" + arr[6]);
     }
 }
-// 13:0
