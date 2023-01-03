@@ -1,0 +1,15 @@
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\bin\Debug\net7.0\hellow_world.exe
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\bin\Debug\net7.0\hellow_world.deps.json
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\bin\Debug\net7.0\hellow_world.runtimeconfig.json
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\bin\Debug\net7.0\hellow_world.dll
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\bin\Debug\net7.0\hellow_world.pdb
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.csproj.AssemblyReference.cache
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.GeneratedMSBuildEditorConfig.editorconfig
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.AssemblyInfoInputs.cache
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.AssemblyInfo.cs
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.csproj.CoreCompileInputs.cache
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.dll
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\refint\hellow_world.dll
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.pdb
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\hellow_world.genruntimeconfig.cache
+C:\All_Github_Reposs\YashKumar15480.github.io\C_sharp_work\hellow_world\obj\Debug\net7.0\ref\hellow_world.dll
