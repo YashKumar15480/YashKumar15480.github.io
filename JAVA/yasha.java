@@ -12,7 +12,7 @@ public class yasha {
         String name[] = new String[200];
         int am_don[] = new int[200];
 
-        System.out.println("Total number of data entered = ");
+        System.out.print("Total number of data entered = ");
         int n=sc.nextInt();
 
         System.out.println("Enter "+n+" names");
@@ -38,7 +38,7 @@ public class yasha {
         }  
 
 
-        System.out.println("highest donor = "+name[index]);
+        System.out.println("highest donor = "+name[index]+" : "+ am_don[index]);
 
 
     }
