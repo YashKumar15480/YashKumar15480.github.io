@@ -169,7 +169,7 @@ body::after {
     display: inline-block;
     width: 65%;
     /* height: 100%; */
-    top: 95%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%,60%);
 }
