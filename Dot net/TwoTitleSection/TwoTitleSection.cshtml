@@ -1,0 +1,24 @@
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using DMS.Feature.Content.Constants
+@model DMS.Feature.Content.Models.TwoTitleSection.TwoTitleSectionModel
+
+
+@if (Model != null)
+ {
+    <div>
+        <div @Html.Sxa().Component("Two-Title-Description",Model.Attributes)>
+            <div class="component-content TwoTitleDescription">
+                <h2 class="TwoTitleDescription-title">
+                    @(Html.Sxa().IsEdit ? Html.Sxa().Field(TwoTitleSectionConstants.TitleField, Model.DataSourceItem) : (!string.IsNullOrEmpty(Model.TitleDetails) ? Html.Raw(Model.TitleDetails) : null))
+                </h2>
+                <h4 class="TwoTitleDescription-sub-title">
+                    @(Html.Sxa().IsEdit ? Html.Sxa().Field(TwoTitleSectionConstants.SubTitleField, Model.DataSourceItem) : (!string.IsNullOrEmpty(Model.SubTitleDetails) ? Html.Raw(Model.SubTitleDetails) : null))
+                </h4>
+                <p class="TwoTitleDescription-description">
+                    @(Html.Sxa().IsEdit ? Html.Sxa().Field(TwoTitleSectionConstants.DescriptionField, Model.DataSourceItem) : (!string.IsNullOrEmpty(Model.DescriptionDetails) ? Html.Raw(Model.DescriptionDetails) : null))
+                </p>
+            </div>
+        </div>
+    </div>
+ }
