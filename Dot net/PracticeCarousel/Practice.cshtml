@@ -1,0 +1,36 @@
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data
+@using DMS.Feature.Gallery.Constants
+@model DMS.Feature.Gallery.Models.PracticeCarouselModel
+@if (Model != null)
+{
+    <div @Html.Sxa().Component("custom-promo-gallery", Model.Attributes)>
+        <div class="component-content">
+            @Html.Sxa().Field(new ID(PracticeCarouselConstants.Carousel.TitleDetail), Model.Item)
+            @Html.Sxa().Field(new ID(PracticeCarouselConstants.Carousel.SubTitleDetail), Model.Item)
+
+            <div class="splide splide-story carousel-practice">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach (var item in Model.PracticeCarouselItems)
+                        {
+                            <li class="splide__slide d-flex">
+                                <div class="component-content">
+                                    @Html.Sxa().Field(new ID(PracticeCarouselConstants.CarouselItem.ItemTitleDetail), item.SitecoreItem)
+                                    @Html.Sxa().Field(new ID(PracticeCarouselConstants.CarouselItem.ItemDesktopImageDetail), item.SitecoreItem)
+                                    @Html.Sxa().Field(new ID(PracticeCarouselConstants.CarouselItem.ItemMobileImageDetail), item.SitecoreItem)
+                                    @Html.Sxa().Field(new ID(PracticeCarouselConstants.CarouselItem.ItemDescriptionDetail), item.SitecoreItem)
+
+                                </div>
+
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
