@@ -47,4 +47,4 @@
 
 
 
-        Task<bool> UpdateContact(string nPINumber, string firstName, string lastName); __> add this line in IXconnectService.cs file
+        Task<bool> UpdateContact(string nPINumber, string firstName, string lastName); __> add this line in IXconnectService.cs files
