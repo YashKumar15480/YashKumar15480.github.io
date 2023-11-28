@@ -1,0 +1,60 @@
+{
+    "AllowedHosts": "*",
+    "Application": {
+      "Name": "LoremIpsum"
+    },
+    "Authorization": {
+      "AuthorityUrl": "https://localhost:60079",
+      "Audience": "edepwebservices.prod"
+    },
+    "Serilog": {
+      "Using": [ "Serilog.Sinks.MSSqlServer", "Serilog.Sinks.Console", "Serilog.Sinks.Seq" ],
+      "MinimumLevel": "Information",
+      "WriteTo": [
+        {
+          "Name": "MSSqlServer",
+          "Args": {
+            "connectionString": "Data Source=DDC5-L-13915DC; Initial Catalog=EDEPWebservicesLog;Trusted_Connection=True;",
+            "schemaName": "dbo",
+            "tableName": "logs",
+            "autoCreateSqlTable": true,
+            "restrictedToMinimumLevel": "Information"
+          }
+        },
+        {
+          "Name": "Seq",
+          "Args": {
+            "serverUrl": "http://localhost:5341",
+            "apiKey": "none",
+            "restrictedToMinimumLevel": "Information"
+          }
+        },
+        {
+          "Name": "Console"
+        }
+      ],
+      "Enrich": [ "FromLogContext" ]
+    },
+    "BackgroundJob": {
+      "ConnectionString": "Data Source=DDC5-L-13915DC; Initial Catalog=EDEPWebserviceJobQue;Trusted_Connection=True;"
+    },
+    "Sitecore": {
+      "ApplicationName": "[Appname]",
+      "XConnect": {
+        "Source": "EDEP",
+        "ConnectionRetry": 3,
+        "ConnectionTimeOut": 60,
+        "Credentials": {
+          "ServerHost": "eisai.102.xc",
+          "AccessTokenHostPath": "",
+          "Protocol": "https://",
+          "Certificate": "9A5501103F018FEBA7E41EC55E5E8DAEA10E03F6"
+        }
+      },
+      "Sitecore": {
+        "ServerHost": "eisai.102.sc",
+        "ServerHost2": "[SITECORE_URL2]"
+      }
+    }
+   }
+  
