@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.1.2" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+		<PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.1.4" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Foundation\BackgroundJob\code\EDEP.Foundation.BackgroundJob.csproj" />
+		<ProjectReference Include="..\..\..\Foundation\ReprocessData\code\EDEP.Foundation.ReprocessData.csproj" />
+		<ProjectReference Include="..\..\..\Foundation\Sitecore\code\EDEP.Foundation.Sitecore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="DMS.Foundation.Exm">
+			<HintPath>..\..\..\Foundation\Sitecore\code\DMS.Foundation.Exm.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+</Project>
