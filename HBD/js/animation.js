@@ -129,7 +129,7 @@ button.addEventListener("click",function(){
         /* 
             when the gift is pressed, the gift scene vanishes and the white div fades slowly giving a sense 
             of explosion. After that, the message frame appears and moves up until the message completes. Then,
-            the message frame fades away and the card appears.
+            the message frame fades away and the card appears. YK
         */
        
         haunt.pause();
