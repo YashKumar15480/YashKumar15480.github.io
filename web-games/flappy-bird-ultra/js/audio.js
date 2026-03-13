@@ -1,18 +1,24 @@
 const audio = document.getElementById("bgAudio")
-const muteBtn = document.getElementById("muteBtn")
 
-muteBtn.onclick = () => {
+const muteBtn = document.getElementById("muteBtn")
+const popupMuteBtn = document.getElementById("popupMuteBtn")
+
+function toggleMusic() {
 
     audio.muted = !audio.muted
 
-    if (audio.muted) {
+    let text = audio.muted ? "Music is muted" : "Enjoy the music"
 
-        muteBtn.innerText = "Music is muted"
+    muteBtn.innerText = text
 
-    } else {
-
-        muteBtn.innerText = "Enjoy the music"
-
+    if (popupMuteBtn) {
+        popupMuteBtn.innerText = text
     }
 
+}
+
+muteBtn.onclick = toggleMusic
+
+if (popupMuteBtn) {
+    popupMuteBtn.onclick = toggleMusic
 }

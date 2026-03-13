@@ -10,19 +10,13 @@ startBtn.onclick = startGame
 
 document.addEventListener("keydown", (e) => {
 
-    if (e.code === "Space") {
+    if (e.code !== "Space") return
 
-        if (!gameRunning) {
+    e.preventDefault()
 
-            startGame()
+    if (!gameRunning) return
 
-        } else {
-
-            bird.velocity = jump
-
-        }
-
-    }
+    bird.velocity = jump
 
 })
 
@@ -30,9 +24,7 @@ document.addEventListener("keydown", (e) => {
 canvas.addEventListener("click", () => {
 
     if (gameRunning) {
-
         bird.velocity = jump
-
     }
 
 })
@@ -43,31 +35,18 @@ function startGame() {
     menu.classList.add("hidden")
     gameContainer.classList.remove("hidden")
 
+    pipes = []
+    score = 0
+
+    bird.y = 200
+    bird.velocity = jump
+
     audio.play()
 
     gameRunning = true
 
-    bird.velocity = jump
+    lastPipeTime = Date.now()
 
     loop()
-
-}
-
-
-function endGame() {
-
-    gameRunning = false
-
-    if (score > highscore) {
-
-        highscore = score
-        setCookie("flappyHighScore", score, 365)
-
-    }
-
-    finalScore.innerText = score
-    finalHighScore.innerText = highscore
-
-    popup.classList.remove("hidden")
 
 }

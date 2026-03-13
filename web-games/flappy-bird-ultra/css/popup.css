@@ -1,7 +1,6 @@
 .popup {
 
     position: fixed;
-
     top: 50%;
     left: 50%;
 
@@ -9,25 +8,115 @@
 
     background: white;
 
-    padding: 40px 60px;
+    padding: 45px 65px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 
     text-align: center;
 
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 320px;
+
 }
+
+
 
 .gameover-title {
 
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 50px;
+    font-weight: 800;
+
+    margin-bottom: 20px;
 
 }
+
+
 
 .popup-score {
 
     font-size: 22px;
+    margin: 8px 0;
+
+}
+
+
+
+/* PLAY AGAIN BUTTON */
+
+#restartBtn {
+
+    margin-top: 30px;
+
+    padding: 16px 42px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(45deg, #4CAF50, #2e7d32);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+    transition: all 0.2s ease;
+
+    width: 200px;
+
+}
+
+
+
+#restartBtn:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* MUSIC BUTTON */
+
+#popupMuteBtn {
+
+    margin-top: 20px;
+
+    padding: 10px 22px;
+
+    font-size: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #f0f0f0;
+
+    color: #333;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+
+    width: 160px;
+
+}
+
+
+
+#popupMuteBtn:hover {
+
+    background: #e0e0e0;
 
 }

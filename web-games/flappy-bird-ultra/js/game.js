@@ -8,13 +8,11 @@ let birdImage = new Image()
 birdImage.src = "assets/images/default-flappy-bird.png"
 
 let bird = {
-
     x: 80,
     y: 200,
     width: 45,
     height: 35,
     velocity: 0
-
 }
 
 let pipes = []
@@ -35,47 +33,6 @@ function drawBird() {
 }
 
 
-function update() {
-
-    applyPhysics()
-
-    for (let pipe of pipes) {
-
-        pipe.x -= 2
-
-        if (!pipe.passed && pipe.x < bird.x) {
-
-            pipe.passed = true
-            score++
-
-            scoreEl.innerText = score
-
-        }
-
-        if (
-
-            bird.x < pipe.x + pipe.width &&
-            bird.x + bird.width > pipe.x &&
-            (bird.y < pipe.top || bird.y + bird.height > pipe.bottom)
-
-        ) {
-
-            endGame()
-
-        }
-
-    }
-
-    pipes = pipes.filter(p => p.x > -60)
-
-    if (Math.random() < 0.02) {
-
-        createPipe()
-
-    }
-
-}
-
 
 function draw() {
 
@@ -95,6 +52,26 @@ function draw() {
 }
 
 
+
+function update() {
+
+    applyPhysics()
+
+    updatePipes()
+
+    let now = Date.now()
+
+    if (now - lastPipeTime > pipeSpawnInterval) {
+
+        createPipe()
+        lastPipeTime = now
+
+    }
+
+}
+
+
+
 function loop() {
 
     if (!gameRunning) return
@@ -103,5 +80,25 @@ function loop() {
     draw()
 
     requestAnimationFrame(loop)
+
+}
+
+function endGame(){
+
+gameRunning = false
+
+audio.pause()
+
+if(score > highscore){
+
+highscore = score
+setCookie("flappyHighScore",score,365)
+
+}
+
+finalScore.innerText = score
+finalHighScore.innerText = highscore
+
+popup.classList.remove("hidden")
 
 }
