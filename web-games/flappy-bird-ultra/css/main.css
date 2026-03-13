@@ -1,0 +1,14 @@
+body {
+
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(#70c5ce, #c9f1ff);
+    text-align: center;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
