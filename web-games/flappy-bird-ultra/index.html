@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Flappy Bird</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="menu-container">
+            <h1 class="game-title">Flappy Bird</h1>
+            <p class="highscore">
+                High Score:
+                <span id="highscore">0</span>
+            </p>
+            <div class="menu-buttons">
+                <button id="uploadBtn">Upload Custom Bird Image</button>
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                    class="hidden"
+                >
+                <button id="muteBtn">Mute / Unmute Music</button>
+                <button id="startBtn" class="start-button">
+                    Start Game (Press Space)
+                </button>
+            </div>
+        </div>
+        <div id="gameContainer" class="hidden">
+            <p class="score">Score:
+                <span id="score">0</span>
+            </p>
+            <canvas id="game" width="420" height="640"></canvas>
+        </div>
+        <audio id="bgAudio" loop>
+            <source src="assets/audio/background-music-1.mp3" type="audio/mpeg">
+        </audio>
+        <script src="js/game.js"></script>
+    </body>
+</html>
