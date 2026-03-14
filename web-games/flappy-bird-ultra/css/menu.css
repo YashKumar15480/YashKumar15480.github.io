@@ -32,3 +32,23 @@
     color: white;
 
 }
+
+@media (max-width:600px) {
+
+    .game-title {
+
+        font-size: 40px;
+
+    }
+
+    .menu-buttons button {
+
+        width: 80%;
+
+        font-size: 16px;
+
+        padding: 14px;
+
+    }
+
+}

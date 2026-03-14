@@ -1,6 +1,7 @@
 const menu = document.querySelector(".menu-container")
 const gameContainer = document.getElementById("gameContainer")
 const startBtn = document.getElementById("startBtn")
+const backHomeBtn = document.getElementById("backHomeBtn")
 
 let gameRunning = false
 
@@ -8,84 +9,132 @@ let gameRunning = false
 startBtn.onclick = startGame
 
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown", (e) => {
 
-if(e.code !== "Space") return
+    if (e.code !== "Space") return
 
-e.preventDefault()
+    e.preventDefault()
 
-// start game
-if(!gameRunning && popup.classList.contains("hidden")){
-    startGame()
-    return
-}
+    // start game
+    if (!gameRunning && popup.classList.contains("hidden")) {
+        startGame()     
+        return
+    }
 
-// flap bird
-if(gameRunning){
-    bird.velocity = jump
-    return
-}
+    // flap bird
+    if (gameRunning) {
+        bird.velocity = jump
+        return
+    }
 
-// restart after countdown
-if(!gameRunning && allowRestartWithSpace){
-    restartGame()
-}
-
-})
-
-
-canvas.addEventListener("click",()=>{
-
-if(gameRunning){
-    bird.velocity = jump
-}
+    // restart after countdown
+    if (!gameRunning && allowRestartWithSpace) {
+        restartGame()
+    }
 
 })
 
 
-function startGame(){
+// Desktop mouse control
+canvas.addEventListener("click", () => {
 
-menu.classList.add("hidden")
-gameContainer.classList.remove("hidden")
+    if (gameRunning) {
+        bird.velocity = jump
+    }
 
-pipes = []
-score = 0
-scoreEl.innerText = score
+})
 
-bird.y = 200
-bird.velocity = jump
 
-audio.currentTime = 0
-audio.play()
+// Mobile touch control
+canvas.addEventListener("touchstart", (e) => {
 
-gameRunning = true
+    e.preventDefault()
 
-lastPipeTime = Date.now()
+    // start game on tap
+    if (!gameRunning && popup.classList.contains("hidden")) {
+        startGame()
+        return
+    }
 
-loop()
+    // flap bird
+    if (gameRunning) {
+        bird.velocity = jump
+        return
+    }
+
+    // restart game
+    if (!gameRunning && allowRestartWithSpace) {
+        restartGame()
+    }
+
+})
+
+
+function startGame() {
+
+    menu.classList.add("hidden")
+    gameContainer.classList.remove("hidden")
+
+    pipes = []
+    score = 0
+    scoreEl.innerText = score
+
+    bird.y = 200
+    bird.velocity = jump
+
+    audio.currentTime = 0
+    audio.play()
+
+    gameRunning = true
+
+    lastPipeTime = Date.now()
+
+    loop()
 
 }
 
 
 
-function restartGame(){
+function restartGame() {
 
-popup.classList.add("hidden")
+    popup.classList.add("hidden")
 
-pipes = []
-score = 0
-scoreEl.innerText = score
+    pipes = []
+    score = 0
+    scoreEl.innerText = score
 
-bird.y = 200
-bird.velocity = jump
+    bird.y = 200
+    bird.velocity = jump
 
-audio.currentTime = 0
-audio.play()
+    audio.currentTime = 0
+    audio.play()
 
-gameRunning = true
+    gameRunning = true
 
-lastPipeTime = Date.now()
+    lastPipeTime = Date.now()
 
-loop()
+    loop()
+
+}
+
+
+
+backHomeBtn.onclick = goToHome
+
+
+function goToHome() {
+
+    popup.classList.add("hidden")
+
+    gameContainer.classList.add("hidden")
+
+    menu.classList.remove("hidden")
+
+    audio.pause()
+
+    pipes = []
+    score = 0
+
+    gameRunning = false
 
 }

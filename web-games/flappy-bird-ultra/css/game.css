@@ -1,7 +1,16 @@
 canvas {
 
-    background: #70c5ce;
+    max-width: 100%;
+
+    height: auto;
+
     border: 3px solid black;
+
+    background: #70c5ce;
+
+    display: block;
+
+    margin: auto;
 
 }
 

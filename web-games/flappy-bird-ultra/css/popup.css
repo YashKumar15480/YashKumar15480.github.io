@@ -132,3 +132,72 @@
     font-weight: 500;
 
 }
+
+#backHomeBtn {
+
+    margin-top: 18px;
+
+    padding: 10px 22px;
+
+    font-size: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e3e3e3;
+
+    color: #333;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+
+}
+
+#backHomeBtn:hover {
+
+    background: #d6d6d6;
+
+    transform: scale(1.05);
+
+}
+
+@media (max-width:600px) {
+
+    .popup {
+
+        width: 85%;
+
+        padding: 30px;
+
+    }
+
+    .gameover-title {
+
+        font-size: 36px;
+
+    }
+
+    .popup-score {
+
+        font-size: 18px;
+
+    }
+
+    #restartBtn {
+
+        width: 100%;
+
+    }
+
+    #popupMuteBtn,
+    #backHomeBtn {
+
+        width: 80%;
+
+    }
+
+}
