@@ -8,45 +8,84 @@ let gameRunning = false
 startBtn.onclick = startGame
 
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown",(e)=>{
 
-    if (e.code !== "Space") return
+if(e.code !== "Space") return
 
-    e.preventDefault()
+e.preventDefault()
 
-    if (!gameRunning) return
+// start game
+if(!gameRunning && popup.classList.contains("hidden")){
+    startGame()
+    return
+}
 
+// flap bird
+if(gameRunning){
     bird.velocity = jump
+    return
+}
+
+// restart after countdown
+if(!gameRunning && allowRestartWithSpace){
+    restartGame()
+}
 
 })
 
 
-canvas.addEventListener("click", () => {
+canvas.addEventListener("click",()=>{
 
-    if (gameRunning) {
-        bird.velocity = jump
-    }
+if(gameRunning){
+    bird.velocity = jump
+}
 
 })
 
 
-function startGame() {
+function startGame(){
 
-    menu.classList.add("hidden")
-    gameContainer.classList.remove("hidden")
+menu.classList.add("hidden")
+gameContainer.classList.remove("hidden")
 
-    pipes = []
-    score = 0
+pipes = []
+score = 0
+scoreEl.innerText = score
 
-    bird.y = 200
-    bird.velocity = jump
+bird.y = 200
+bird.velocity = jump
 
-    audio.play()
+audio.currentTime = 0
+audio.play()
 
-    gameRunning = true
+gameRunning = true
 
-    lastPipeTime = Date.now()
+lastPipeTime = Date.now()
 
-    loop()
+loop()
+
+}
+
+
+
+function restartGame(){
+
+popup.classList.add("hidden")
+
+pipes = []
+score = 0
+scoreEl.innerText = score
+
+bird.y = 200
+bird.velocity = jump
+
+audio.currentTime = 0
+audio.play()
+
+gameRunning = true
+
+lastPipeTime = Date.now()
+
+loop()
 
 }

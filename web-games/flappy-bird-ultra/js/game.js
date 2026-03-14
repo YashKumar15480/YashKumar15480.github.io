@@ -7,6 +7,10 @@ const highscoreEl = document.getElementById("highscore")
 let birdImage = new Image()
 birdImage.src = "assets/images/default-flappy-bird.png"
 
+const restartTimerText = document.getElementById("restartTimer")
+
+let allowRestartWithSpace = false
+
 let bird = {
     x: 80,
     y: 200,
@@ -83,22 +87,54 @@ function loop() {
 
 }
 
-function endGame(){
+function endGame() {
 
-gameRunning = false
+    gameRunning = false
 
-audio.pause()
+    audio.pause()
 
-if(score > highscore){
+    if (score > highscore) {
 
-highscore = score
-setCookie("flappyHighScore",score,365)
+        highscore = score
+        setCookie("flappyHighScore", score, 365)
+
+    }
+
+    finalScore.innerText = score
+    finalHighScore.innerText = highscore
+
+    popup.classList.remove("hidden")
+
+    startRestartCountdown()
 
 }
 
-finalScore.innerText = score
-finalHighScore.innerText = highscore
+function startRestartCountdown() {
 
-popup.classList.remove("hidden")
+    allowRestartWithSpace = false
+
+    let timeLeft = 5
+
+    restartTimerText.innerText = "Restart available in " + timeLeft
+
+    let countdown = setInterval(() => {
+
+        timeLeft--
+
+        if (timeLeft > 0) {
+
+            restartTimerText.innerText = "Restart available in " + timeLeft
+
+        } else {
+
+            clearInterval(countdown)
+
+            restartTimerText.innerText = "Press SPACE to restart"
+
+            allowRestartWithSpace = true
+
+        }
+
+    }, 1000)
 
 }
