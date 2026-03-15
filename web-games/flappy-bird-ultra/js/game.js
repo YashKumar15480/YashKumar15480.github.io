@@ -3,19 +3,21 @@ const ctx = canvas.getContext("2d")
 
 const scoreEl = document.getElementById("score")
 const highscoreEl = document.getElementById("highscore")
+const finalScore = document.getElementById("finalScore")
+const finalHighScore = document.getElementById("finalHighScore")
+
+const popup = document.getElementById("gameOverPopup")
+
+const sfxJump = document.getElementById("sfxJump")
+const sfxGameOver = document.getElementById("sfxGameOver")
 
 let birdImage = new Image()
 birdImage.src = "assets/images/default-flappy-bird.png"
 
-const restartTimerText = document.getElementById("restartTimer")
-
-let allowRestartWithSpace = false
-
 let backgroundImage = new Image()
-backgroundImage.src = "assets/images/background-parallex.png"
+backgroundImage.src = "assets/images/background-parallex.jpeg"
 
 let bgX = 0
-let collisionPause = false
 
 let bird = {
     x: 80,
@@ -26,13 +28,20 @@ let bird = {
 }
 
 let pipes = []
-
 let score = 0
+let highscore = 0
 
-let highscore = getCookie("flappyHighScore")
+let collisionPause = false
 
-if (highscore == "") highscore = 0
+// --- HIGH SCORE INITIALIZATION ---
+let storedHighScore = getCookie("flappyHighScore")
 
+if (storedHighScore === "") {
+    setCookie("flappyHighScore", 0, 365)
+    storedHighScore = 0
+}
+
+highscore = parseInt(storedHighScore)
 highscoreEl.innerText = highscore
 
 
@@ -43,15 +52,34 @@ function drawBird() {
 }
 
 
+function drawBackground() {
+
+    bgX -= 0.25
+
+    if (bgX <= -canvas.width) {
+        bgX = 0
+    }
+
+    ctx.save()
+
+    ctx.filter = "blur(4px)"
+
+    ctx.drawImage(backgroundImage, bgX, 0, canvas.width, canvas.height)
+    ctx.drawImage(backgroundImage, bgX + canvas.width, 0, canvas.width, canvas.height)
+
+    ctx.restore()
+
+}
+
 
 function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-    // DRAW BACKGROUND FIRST
+    // background first
     drawBackground()
 
-    // DRAW PIPES
+    // pipes
     for (let pipe of pipes) {
 
         ctx.fillStyle = pipe.hit ? "red" : "green"
@@ -61,14 +89,15 @@ function draw() {
 
     }
 
-    // DRAW BIRD LAST (top layer)
+    // bird last
     drawBird()
 
 }
 
 
-
 function update() {
+
+    if (collisionPause) return
 
     applyPhysics()
 
@@ -86,7 +115,6 @@ function update() {
 }
 
 
-
 function loop() {
 
     if (!gameRunning) return
@@ -98,60 +126,10 @@ function loop() {
 
 }
 
-function endGame() {
-
-    gameRunning = false
-
-    audio.pause()
-
-    if (score > highscore) {
-
-        highscore = score
-        setCookie("flappyHighScore", score, 365)
-
-    }
-
-    finalScore.innerText = score
-    finalHighScore.innerText = highscore
-
-    popup.classList.remove("hidden")
-
-    startRestartCountdown()
-
-}
-
-function startRestartCountdown() {
-
-    allowRestartWithSpace = false
-
-    let timeLeft = 3
-
-    restartTimerText.innerText = "Restart available in " + timeLeft
-
-    let countdown = setInterval(() => {
-
-        timeLeft--
-
-        if (timeLeft > 0) {
-
-            restartTimerText.innerText = "Restart available in " + timeLeft
-
-        } else {
-
-            clearInterval(countdown)
-
-            restartTimerText.innerText = "Press SPACE to restart"
-
-            allowRestartWithSpace = true
-
-        }
-
-    }, 1000)
-
-}
 
 function pauseAndEndGame() {
 
+    collisionPause = true
     gameRunning = false
 
     // play game over sound
@@ -166,23 +144,26 @@ function pauseAndEndGame() {
     }, 2000)
 
 }
-function drawBackground() {
 
-    bgX -= 0.25
 
-    if (bgX <= -canvas.width) {
-        bgX = 0
+function endGame() {
+
+    let storedHighScore = parseInt(getCookie("flappyHighScore"))
+
+    if (score > storedHighScore) {
+
+        setCookie("flappyHighScore", score, 365)
+        storedHighScore = score
+
     }
 
-    ctx.save()
+    highscore = storedHighScore
 
-    // stronger blur for background
-    ctx.filter = "blur(4px)"
+    finalScore.innerText = score
+    finalHighScore.innerText = storedHighScore
 
-    // draw large image smoothly scaled
-    ctx.drawImage(backgroundImage, bgX, 0, canvas.width, canvas.height)
-    ctx.drawImage(backgroundImage, bgX + canvas.width, 0, canvas.width, canvas.height)
+    popup.classList.remove("hidden")
 
-    ctx.restore()
+    startRestartCountdown()
 
 }

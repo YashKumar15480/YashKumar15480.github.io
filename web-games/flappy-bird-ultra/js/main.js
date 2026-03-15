@@ -3,6 +3,8 @@ const gameContainer = document.getElementById("gameContainer")
 const startBtn = document.getElementById("startBtn")
 const backHomeBtn = document.getElementById("backHomeBtn")
 
+const sfxButton = document.getElementById("sfxButton")
+
 let gameRunning = false
 
 
@@ -22,7 +24,6 @@ document.addEventListener("keydown", (e) => {
 
     e.preventDefault()
 
-    // ignore inputs during collision pause
     if (collisionPause) return
 
 
@@ -32,13 +33,18 @@ document.addEventListener("keydown", (e) => {
         return
     }
 
+
     // flap bird
     if (gameRunning) {
+
         bird.velocity = jump
+
         sfxJump.currentTime = 0
         sfxJump.play()
+
         return
     }
+
 
     // restart after countdown
     if (!gameRunning && allowRestartWithSpace) {
@@ -48,21 +54,24 @@ document.addEventListener("keydown", (e) => {
 })
 
 
-// Desktop mouse control
+// mouse click
 canvas.addEventListener("click", () => {
 
     if (collisionPause) return
 
     if (gameRunning) {
+
         bird.velocity = jump
+
         sfxJump.currentTime = 0
         sfxJump.play()
+
     }
 
 })
 
 
-// Mobile touch control
+// mobile touch
 canvas.addEventListener("touchstart", (e) => {
 
     e.preventDefault()
@@ -75,9 +84,12 @@ canvas.addEventListener("touchstart", (e) => {
     }
 
     if (gameRunning) {
+
         bird.velocity = jump
+
         sfxJump.currentTime = 0
         sfxJump.play()
+
         return
     }
 
@@ -112,7 +124,6 @@ function startGame() {
 }
 
 
-
 function restartGame() {
 
     popup.classList.add("hidden")
@@ -136,7 +147,6 @@ function restartGame() {
 }
 
 
-
 backHomeBtn.onclick = () => {
 
     sfxButton.currentTime = 0
@@ -152,7 +162,6 @@ function goToHome() {
     popup.classList.add("hidden")
 
     gameContainer.classList.add("hidden")
-
     menu.classList.remove("hidden")
 
     audio.pause()
@@ -163,8 +172,9 @@ function goToHome() {
     scoreEl.innerText = score
 
     // reload highscore from cookie
-    highscore = getCookie("flappyHighScore") || 0
-    highscoreEl.innerText = highscore
+    let storedHighScore = getCookie("flappyHighScore")
+
+    highscoreEl.innerText = storedHighScore ? storedHighScore : 0
 
     gameRunning = false
 

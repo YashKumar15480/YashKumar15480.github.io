@@ -10,18 +10,22 @@ function setCookie(name, value, days) {
 
 }
 
+
 function getCookie(name) {
 
     let cname = name + "="
 
-    let ca = document.cookie.split(';')
+    let decodedCookie = decodeURIComponent(document.cookie)
 
-    for (let c of ca) {
+    let ca = decodedCookie.split(';')
 
-        c = c.trim()
+    for (let i = 0; i < ca.length; i++) {
 
-        if (c.indexOf(cname) == 0)
+        let c = ca[i].trim()
+
+        if (c.indexOf(cname) === 0) {
             return c.substring(cname.length, c.length)
+        }
 
     }
 
