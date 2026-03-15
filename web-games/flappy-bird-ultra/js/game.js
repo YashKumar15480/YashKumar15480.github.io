@@ -154,6 +154,10 @@ function pauseAndEndGame() {
 
     gameRunning = false
 
+    // play game over sound
+    sfxGameOver.currentTime = 0
+    sfxGameOver.play()
+
     setTimeout(() => {
 
         collisionPause = false

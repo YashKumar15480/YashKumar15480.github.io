@@ -1,7 +1,14 @@
 const uploadBtn = document.getElementById("uploadBtn")
 const imageUpload = document.getElementById("imageUpload")
 
-uploadBtn.onclick = () => imageUpload.click()
+uploadBtn.onclick = () => {
+
+    sfxButton.currentTime = 0
+    sfxButton.play()
+
+    imageUpload.click()
+
+}
 
 imageUpload.addEventListener("change", function () {
 

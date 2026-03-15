@@ -6,7 +6,14 @@ const backHomeBtn = document.getElementById("backHomeBtn")
 let gameRunning = false
 
 
-startBtn.onclick = startGame
+startBtn.onclick = () => {
+
+    sfxButton.currentTime = 0
+    sfxButton.play()
+
+    startGame()
+
+}
 
 
 document.addEventListener("keydown", (e) => {
@@ -28,6 +35,8 @@ document.addEventListener("keydown", (e) => {
     // flap bird
     if (gameRunning) {
         bird.velocity = jump
+        sfxJump.currentTime = 0
+        sfxJump.play()
         return
     }
 
@@ -46,6 +55,8 @@ canvas.addEventListener("click", () => {
 
     if (gameRunning) {
         bird.velocity = jump
+        sfxJump.currentTime = 0
+        sfxJump.play()
     }
 
 })
@@ -65,6 +76,8 @@ canvas.addEventListener("touchstart", (e) => {
 
     if (gameRunning) {
         bird.velocity = jump
+        sfxJump.currentTime = 0
+        sfxJump.play()
         return
     }
 
@@ -124,7 +137,14 @@ function restartGame() {
 
 
 
-backHomeBtn.onclick = goToHome
+backHomeBtn.onclick = () => {
+
+    sfxButton.currentTime = 0
+    sfxButton.play()
+
+    goToHome()
+
+}
 
 
 function goToHome() {
