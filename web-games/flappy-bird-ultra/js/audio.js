@@ -3,11 +3,13 @@ const audio = document.getElementById("bgAudio")
 const muteBtn = document.getElementById("muteBtn")
 const popupMuteBtn = document.getElementById("popupMuteBtn")
 
+const sfxJump = document.getElementById("sfxJump")
+const sfxGameOver = document.getElementById("sfxGameOver")
 const sfxButton = document.getElementById("sfxButton")
+
 
 function toggleMusic() {
 
-    // play button click sound
     sfxButton.currentTime = 0
     sfxButton.play()
 
@@ -17,19 +19,14 @@ function toggleMusic() {
 
     muteBtn.innerText = text
 
-    // popup button may not exist on home screen load
     if (popupMuteBtn) {
         popupMuteBtn.innerText = text
     }
 
 }
 
-
-// home screen button
 muteBtn.addEventListener("click", toggleMusic)
 
-
-// popup button
 if (popupMuteBtn) {
     popupMuteBtn.addEventListener("click", toggleMusic)
 }

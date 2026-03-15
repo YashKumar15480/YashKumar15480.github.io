@@ -3,13 +3,6 @@ const ctx = canvas.getContext("2d")
 
 const scoreEl = document.getElementById("score")
 const highscoreEl = document.getElementById("highscore")
-const finalScore = document.getElementById("finalScore")
-const finalHighScore = document.getElementById("finalHighScore")
-
-const popup = document.getElementById("gameOverPopup")
-
-const sfxJump = document.getElementById("sfxJump")
-const sfxGameOver = document.getElementById("sfxGameOver")
 
 let birdImage = new Image()
 birdImage.src = "assets/images/default-flappy-bird.png"
@@ -28,12 +21,18 @@ let bird = {
 }
 
 let pipes = []
+
 let score = 0
 let highscore = 0
 
 let collisionPause = false
 
-// --- HIGH SCORE INITIALIZATION ---
+// pipe timing
+let lastPipeTime = 0
+
+
+// -------- HIGH SCORE INIT --------
+
 let storedHighScore = getCookie("flappyHighScore")
 
 if (storedHighScore === "") {
@@ -45,12 +44,7 @@ highscore = parseInt(storedHighScore)
 highscoreEl.innerText = highscore
 
 
-function drawBird() {
-
-    ctx.drawImage(birdImage, bird.x, bird.y, bird.width, bird.height)
-
-}
-
+// -------- DRAW FUNCTIONS --------
 
 function drawBackground() {
 
@@ -72,14 +66,19 @@ function drawBackground() {
 }
 
 
+function drawBird() {
+
+    ctx.drawImage(birdImage, bird.x, bird.y, bird.width, bird.height)
+
+}
+
+
 function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-    // background first
     drawBackground()
 
-    // pipes
     for (let pipe of pipes) {
 
         ctx.fillStyle = pipe.hit ? "red" : "green"
@@ -89,11 +88,12 @@ function draw() {
 
     }
 
-    // bird last
     drawBird()
 
 }
 
+
+// -------- GAME LOOP --------
 
 function update() {
 
@@ -127,12 +127,13 @@ function loop() {
 }
 
 
+// -------- GAME OVER --------
+
 function pauseAndEndGame() {
 
     collisionPause = true
     gameRunning = false
 
-    // play game over sound
     sfxGameOver.currentTime = 0
     sfxGameOver.play()
 

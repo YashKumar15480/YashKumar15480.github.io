@@ -1,9 +1,6 @@
-let pipeSpeed = 1.4   // slower pipe movement
-
-let pipeGap = 170     // guaranteed bird space
-let pipeSpawnInterval = 1400  // milliseconds
-
-let lastPipeTime = 0
+let pipeSpeed = 1.4
+let pipeGap = 170
+let pipeSpawnInterval = 1400
 
 
 function createPipe() {
@@ -14,17 +11,15 @@ function createPipe() {
     let top = Math.random() * (maxTop - minTop) + minTop
 
     pipes.push({
-
         x: canvas.width,
         top: top,
         bottom: top + pipeGap,
         width: 70,
-        passed: false
-
+        passed: false,
+        hit: false
     })
 
 }
-
 
 
 function updatePipes() {
@@ -33,6 +28,7 @@ function updatePipes() {
 
         pipe.x -= pipeSpeed
 
+
         if (!pipe.passed && pipe.x < bird.x) {
 
             pipe.passed = true
@@ -40,6 +36,7 @@ function updatePipes() {
             scoreEl.innerText = score
 
         }
+
 
         if (
 
@@ -50,7 +47,6 @@ function updatePipes() {
         ) {
 
             pipe.hit = true
-            collisionPause = true
             pauseAndEndGame()
 
         }
