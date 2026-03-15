@@ -49,7 +49,9 @@ function updatePipes() {
 
         ) {
 
-            endGame()
+            pipe.hit = true
+            collisionPause = true
+            pauseAndEndGame()
 
         }
 

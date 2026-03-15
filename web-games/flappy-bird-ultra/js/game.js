@@ -11,6 +11,12 @@ const restartTimerText = document.getElementById("restartTimer")
 
 let allowRestartWithSpace = false
 
+let backgroundImage = new Image()
+backgroundImage.src = "assets/images/background-parallex.jpeg"
+
+let bgX = 0
+let collisionPause = false
+
 let bird = {
     x: 80,
     y: 200,
@@ -42,16 +48,21 @@ function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-    drawBird()
+    // DRAW BACKGROUND FIRST
+    drawBackground()
 
-    ctx.fillStyle = "green"
-
+    // DRAW PIPES
     for (let pipe of pipes) {
+
+        ctx.fillStyle = pipe.hit ? "red" : "green"
 
         ctx.fillRect(pipe.x, 0, pipe.width, pipe.top)
         ctx.fillRect(pipe.x, pipe.bottom, pipe.width, canvas.height)
 
     }
+
+    // DRAW BIRD LAST (top layer)
+    drawBird()
 
 }
 
@@ -113,7 +124,7 @@ function startRestartCountdown() {
 
     allowRestartWithSpace = false
 
-    let timeLeft = 5
+    let timeLeft = 3
 
     restartTimerText.innerText = "Restart available in " + timeLeft
 
@@ -136,5 +147,38 @@ function startRestartCountdown() {
         }
 
     }, 1000)
+
+}
+
+function pauseAndEndGame() {
+
+    gameRunning = false
+
+    setTimeout(() => {
+
+        collisionPause = false
+        endGame()
+
+    }, 2000)
+
+}
+function drawBackground() {
+
+    bgX -= 0.25
+
+    if (bgX <= -canvas.width) {
+        bgX = 0
+    }
+
+    ctx.save()
+
+    // stronger blur for background
+    ctx.filter = "blur(4px)"
+
+    // draw large image smoothly scaled
+    ctx.drawImage(backgroundImage, bgX, 0, canvas.width, canvas.height)
+    ctx.drawImage(backgroundImage, bgX + canvas.width, 0, canvas.width, canvas.height)
+
+    ctx.restore()
 
 }

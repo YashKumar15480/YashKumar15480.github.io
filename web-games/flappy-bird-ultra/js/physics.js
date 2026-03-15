@@ -1,5 +1,5 @@
 let gravity = 0.35
-let jump = -7
+let jump = -6
 
 function applyPhysics() {
 

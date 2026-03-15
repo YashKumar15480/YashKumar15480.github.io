@@ -15,9 +15,13 @@ document.addEventListener("keydown", (e) => {
 
     e.preventDefault()
 
+    // ignore inputs during collision pause
+    if (collisionPause) return
+
+
     // start game
     if (!gameRunning && popup.classList.contains("hidden")) {
-        startGame()     
+        startGame()
         return
     }
 
@@ -38,6 +42,8 @@ document.addEventListener("keydown", (e) => {
 // Desktop mouse control
 canvas.addEventListener("click", () => {
 
+    if (collisionPause) return
+
     if (gameRunning) {
         bird.velocity = jump
     }
@@ -50,19 +56,18 @@ canvas.addEventListener("touchstart", (e) => {
 
     e.preventDefault()
 
-    // start game on tap
+    if (collisionPause) return
+
     if (!gameRunning && popup.classList.contains("hidden")) {
         startGame()
         return
     }
 
-    // flap bird
     if (gameRunning) {
         bird.velocity = jump
         return
     }
 
-    // restart game
     if (!gameRunning && allowRestartWithSpace) {
         restartGame()
     }
@@ -134,6 +139,12 @@ function goToHome() {
 
     pipes = []
     score = 0
+
+    scoreEl.innerText = score
+
+    // reload highscore from cookie
+    highscore = getCookie("flappyHighScore") || 0
+    highscoreEl.innerText = highscore
 
     gameRunning = false
 

@@ -1,69 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Flappy Bird</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/game.css">
-        <link rel="stylesheet" href="css/popup.css">
-    </head>
-    <body>
-        <div class="menu-container">
-            <h1 class="game-title">Flappy Bird</h1>
-            <p class="highscore">
-                High Score:
-                <span id="highscore">0</span>
-            </p>
-            <div class="menu-buttons">
-                <button id="uploadBtn">Upload Custom Bird Image</button>
-                <input
-                    type="file"
-                    id="imageUpload"
-                    accept="image/*"
-                    class="hidden"
-                >
-                <button id="muteBtn">Enjoy the music</button>
-                <button id="startBtn" class="start-button">
-                    Start Game (Press Space)
-                </button>
-            </div>
-        </div>
-        <div id="gameContainer" class="hidden">
-            <p class="score">
-                Score:
-                <span id="score">0</span>
-            </p>
-            <canvas id="game" width="420" height="640"></canvas>
-        </div>
-        <div id="gameOverPopup" class="popup hidden">
-            <h1 class="gameover-title">Game Over</h1>
-            <p class="popup-score">
-                Score:
-                <span id="finalScore">0</span>
-            </p>
-            <p class="popup-score">
-                High Score:
-                <span id="finalHighScore">0</span>
-            </p>
-            <p id="restartTimer" class="popup-timer">
-                Restart available in 5
-            </p>
-            <button id="restartBtn">Play Again</button>
-            <button id="popupMuteBtn">Enjoy the music</button>
-            <button id="backHomeBtn">Back to Home</button>
-        </div>
-        <audio id="bgAudio" loop>
-            <source src="assets/audio/background-music-1.mp3" type="audio/mpeg">
-        </audio>
-        <script src="js/cookie.js"></script>
-        <script src="js/audio.js"></script>
-        <script src="js/upload.js"></script>
-        <script src="js/game.js"></script>
-        <script src="js/physics.js"></script>
-        <script src="js/pipes.js"></script>
-        <script src="js/popup.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Flappy Bird Ultra</title>
+
+<link rel="icon" type="image/png" href="assets/images/default-flappy-bird.png">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/game.css">
+<link rel="stylesheet" href="css/popup.css">
+
+</head>
+
+<body>
+
+
+<!-- HOME MENU -->
+
+<div class="menu-container">
+
+<h1 class="game-title">Flappy Bird Ultra</h1>
+
+<p class="highscore">
+High Score: <span id="highscore">0</span>
+</p>
+
+<div class="menu-buttons">
+
+<button id="startBtn" class="start-button">
+Start Game (Press Space)
+</button>
+
+<button id="uploadBtn">
+Upload Custom Bird Image
+</button>
+
+<button id="muteBtn">
+Enjoy the music
+</button>
+
+<input type="file" id="imageUpload" accept="image/*" class="hidden">
+
+</div>
+
+</div>
+
+
+
+<!-- GAME AREA -->
+
+<div id="gameContainer" class="hidden">
+
+<p class="score">
+Score: <span id="score">0</span>
+</p>
+
+<canvas id="game" width="420" height="640"></canvas>
+
+</div>
+
+
+
+<!-- GAME OVER POPUP -->
+
+<div id="gameOverPopup" class="popup hidden">
+
+<h1 class="gameover-title">Game Over</h1>
+
+<p class="popup-score">
+Score: <span id="finalScore">0</span>
+</p>
+
+<p class="popup-score">
+High Score: <span id="finalHighScore">0</span>
+</p>
+
+<p id="restartTimer" class="popup-timer">
+Restart available in 3
+</p>
+
+<button id="popupMuteBtn">
+Enjoy the music
+</button>
+
+<button id="backHomeBtn">
+Back to Home
+</button>
+
+</div>
+
+
+
+<!-- BACKGROUND AUDIO -->
+
+<audio id="bgAudio" loop>
+<source src="assets/audio/background-music-1.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<!-- JAVASCRIPT FILES -->
+
+<script src="js/cookie.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/upload.js"></script>
+
+<script src="js/game.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/pipes.js"></script>
+<script src="js/popup.js"></script>
+
+<script src="js/main.js"></script>
+
+
+</body>
 </html>
