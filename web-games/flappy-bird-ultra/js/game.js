@@ -12,7 +12,7 @@ const restartTimerText = document.getElementById("restartTimer")
 let allowRestartWithSpace = false
 
 let backgroundImage = new Image()
-backgroundImage.src = "assets/images/background-parallex.jpeg"
+backgroundImage.src = "assets/images/background-parallex.png"
 
 let bgX = 0
 let collisionPause = false
