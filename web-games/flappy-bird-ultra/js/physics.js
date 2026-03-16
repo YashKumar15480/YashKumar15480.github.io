@@ -1,22 +1,33 @@
-let gravity = 0.35
-let jump = -5
+const gravity = 0.45;
+const jumpForce = -8;
 
+const bird = {
+    x: 90,
+    y: 300,
+    width: 40,
+    height: 30,
+    velocity: 0
+};
 
-function applyPhysics() {
+function flap() {
 
-    bird.velocity += gravity
+    if (!gameRunning) return;
 
-    bird.y += bird.velocity
+    bird.velocity = jumpForce;
 
-    if (bird.y + bird.height > canvas.height) {
+    playJump();
+}
 
-        bird.y = canvas.height - bird.height
-        pauseAndEndGame()
+function updatePhysics() {
 
+    bird.velocity += gravity;
+    bird.y += bird.velocity;
+
+    if (bird.y + bird.height >= canvas.height) {
+        triggerGameOver();
     }
 
     if (bird.y < 0) {
-        bird.y = 0
+        bird.y = 0;
     }
-
 }

@@ -1,37 +1,16 @@
-const uploadBtn = document.getElementById("uploadBtn")
-const imageUpload = document.getElementById("imageUpload")
-
-uploadBtn.onclick = () => {
-
-    sfxButton.currentTime = 0
-    sfxButton.play()
-
-    imageUpload.click()
-
-}
+const imageUpload = document.getElementById("imageUpload");
 
 imageUpload.addEventListener("change", function () {
 
-    let file = this.files[0]
+    const file = this.files[0];
 
-    if (!file) return
+    if (!file) return;
 
-    if (file.size > 2 * 1024 * 1024) {
-
-        alert("Image must be under 2MB")
-        return
-
-    }
-
-    let reader = new FileReader()
+    const reader = new FileReader();
 
     reader.onload = function (e) {
+        birdImg.src = e.target.result;
+    };
 
-        birdImage = new Image()
-        birdImage.src = e.target.result
-
-    }
-
-    reader.readAsDataURL(file)
-
-})
+    reader.readAsDataURL(file);
+});

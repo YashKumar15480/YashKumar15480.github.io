@@ -1,33 +1,15 @@
-function setCookie(name, value, days) {
+let score = 0;
 
-    let d = new Date()
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000))
+function getHighScore() {
 
-    let expires = "expires=" + d.toUTCString()
-
-    document.cookie = name + "=" + value + ";" + expires + ";path=/"
-
+    return Number(localStorage.getItem("flappyHighScore")) || 0;
 }
 
+function setHighScore(newScore) {
 
-function getCookie(name) {
+    const high = getHighScore();
 
-    let cname = name + "="
-
-    let decodedCookie = decodeURIComponent(document.cookie)
-
-    let ca = decodedCookie.split(';')
-
-    for (let i = 0; i < ca.length; i++) {
-
-        let c = ca[i].trim()
-
-        if (c.indexOf(cname) === 0) {
-            return c.substring(cname.length, c.length)
-        }
-
+    if (newScore > high) {
+        localStorage.setItem("flappyHighScore", newScore);
     }
-
-    return ""
-
 }

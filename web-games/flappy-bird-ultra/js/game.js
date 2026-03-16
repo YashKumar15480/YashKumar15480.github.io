@@ -1,170 +1,77 @@
-const canvas = document.getElementById("game")
-const ctx = canvas.getContext("2d")
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
 
-const scoreEl = document.getElementById("score")
-const highscoreEl = document.getElementById("highscore")
+const scoreEl = document.getElementById("score");
 
-let birdImage = new Image()
-birdImage.src = "assets/images/default-flappy-bird.png"
+let gameRunning = false;
+let animationFrame;
 
-let backgroundImage = new Image()
-backgroundImage.src = "assets/images/background-parallex.jpeg"
+const birdImg = new Image();
+birdImg.src = "assets/images/default-flappy-bird.png";
 
-let bgX = 0
+const bgImg = new Image();
+bgImg.src = "assets/images/background-parallax.jpeg";
 
-let bird = {
-    x: 80,
-    y: 200,
-    width: 45,
-    height: 35,
-    velocity: 0
+function startGame() {
+
+    if (gameRunning) return;
+
+    resetGame();
+    gameRunning = true;
+
+    loop();
 }
 
-let pipes = []
-
-let score = 0
-let highscore = 0
-
-let collisionPause = false
-
-// pipe timing
-let lastPipeTime = 0
-
-
-// -------- HIGH SCORE INIT --------
-
-let storedHighScore = getCookie("flappyHighScore")
-
-if (storedHighScore === "") {
-    setCookie("flappyHighScore", 0, 365)
-    storedHighScore = 0
+function stopGame() {
+    gameRunning = false;
+    cancelAnimationFrame(animationFrame);
 }
 
-highscore = parseInt(storedHighScore)
-highscoreEl.innerText = highscore
+function resetGame() {
 
+    bird.y = 300;
+    bird.velocity = 0;
 
-// -------- DRAW FUNCTIONS --------
+    pipes.length = 0;
+
+    score = 0;
+    scoreEl.innerText = score;
+}
 
 function drawBackground() {
 
-    bgX -= 0.25
-
-    if (bgX <= -canvas.width) {
-        bgX = 0
-    }
-
-    ctx.save()
-
-    ctx.filter = "blur(4px)"
-
-    ctx.drawImage(backgroundImage, bgX, 0, canvas.width, canvas.height)
-    ctx.drawImage(backgroundImage, bgX + canvas.width, 0, canvas.width, canvas.height)
-
-    ctx.restore()
-
+    ctx.drawImage(
+        bgImg,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 }
-
 
 function drawBird() {
 
-    ctx.drawImage(birdImage, bird.x, bird.y, bird.width, bird.height)
-
+    ctx.drawImage(
+        birdImg,
+        bird.x,
+        bird.y,
+        bird.width,
+        bird.height
+    );
 }
-
-
-function draw() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-    drawBackground()
-
-    for (let pipe of pipes) {
-
-        ctx.fillStyle = pipe.hit ? "red" : "green"
-
-        ctx.fillRect(pipe.x, 0, pipe.width, pipe.top)
-        ctx.fillRect(pipe.x, pipe.bottom, pipe.width, canvas.height)
-
-    }
-
-    drawBird()
-
-}
-
-
-// -------- GAME LOOP --------
-
-function update() {
-
-    if (collisionPause) return
-
-    applyPhysics()
-
-    updatePipes()
-
-    let now = Date.now()
-
-    if (now - lastPipeTime > pipeSpawnInterval) {
-
-        createPipe()
-        lastPipeTime = now
-
-    }
-
-}
-
 
 function loop() {
 
-    if (!gameRunning) return
+    if (!gameRunning) return;
 
-    update()
-    draw()
+    updatePhysics();
+    updatePipes();
 
-    requestAnimationFrame(loop)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-}
+    drawBackground();
+    drawPipes();
+    drawBird();
 
-
-// -------- GAME OVER --------
-
-function pauseAndEndGame() {
-
-    collisionPause = true
-    gameRunning = false
-
-    sfxGameOver.currentTime = 0
-    sfxGameOver.play()
-
-    setTimeout(() => {
-
-        collisionPause = false
-        endGame()
-
-    }, 2000)
-
-}
-
-
-function endGame() {
-
-    let storedHighScore = parseInt(getCookie("flappyHighScore"))
-
-    if (score > storedHighScore) {
-
-        setCookie("flappyHighScore", score, 365)
-        storedHighScore = score
-
-    }
-
-    highscore = storedHighScore
-
-    finalScore.innerText = score
-    finalHighScore.innerText = storedHighScore
-
-    popup.classList.remove("hidden")
-
-    startRestartCountdown()
-
+    animationFrame = requestAnimationFrame(loop);
 }

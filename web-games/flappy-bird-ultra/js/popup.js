@@ -1,39 +1,8 @@
-const popup = document.getElementById("gameOverPopup")
+function triggerGameOver() {
 
-const finalScore = document.getElementById("finalScore")
-const finalHighScore = document.getElementById("finalHighScore")
+    stopGame();
 
-const restartTimerText = document.getElementById("restartTimer")
+    playGameOver();
 
-let allowRestartWithSpace = false
-
-
-function startRestartCountdown() {
-
-    allowRestartWithSpace = false
-
-    let timeLeft = 3
-
-    restartTimerText.innerText = "Restart available in " + timeLeft
-
-    let countdown = setInterval(() => {
-
-        timeLeft--
-
-        if (timeLeft > 0) {
-
-            restartTimerText.innerText = "Restart available in " + timeLeft
-
-        } else {
-
-            clearInterval(countdown)
-
-            restartTimerText.innerText = "Press SPACE to restart"
-
-            allowRestartWithSpace = true
-
-        }
-
-    }, 1000)
-
+    showGameOverPopup(score);
 }

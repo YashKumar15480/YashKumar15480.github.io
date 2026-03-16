@@ -1,58 +1,88 @@
-let pipeSpeed = 1.4
-let pipeGap = 170
-let pipeSpawnInterval = 1400
+const pipes = [];
 
+const pipeWidth = 70;
+const pipeGap = 170;
+const pipeSpeed = 2;
 
-function createPipe() {
+let pipeTimer = 0;
 
-    let minTop = 60
-    let maxTop = canvas.height - pipeGap - 120
+const pipeTopImg = new Image();
+pipeTopImg.src = "assets/images/pipe-top.png";
 
-    let top = Math.random() * (maxTop - minTop) + minTop
+const pipeBottomImg = new Image();
+pipeBottomImg.src = "assets/images/pipe-bottom.png";
+
+function spawnPipe() {
+
+    const min = 60;
+    const max = canvas.height - pipeGap - 120;
+
+    const topHeight = Math.random() * (max - min) + min;
 
     pipes.push({
         x: canvas.width,
-        top: top,
-        bottom: top + pipeGap,
-        width: 70,
-        passed: false,
-        hit: false
-    })
-
+        top: topHeight,
+        bottom: topHeight + pipeGap,
+        passed: false
+    });
 }
-
 
 function updatePipes() {
 
-    for (let pipe of pipes) {
+    pipeTimer++;
 
-        pipe.x -= pipeSpeed
-
-
-        if (!pipe.passed && pipe.x < bird.x) {
-
-            pipe.passed = true
-            score++
-            scoreEl.innerText = score
-
-        }
-
-
-        if (
-
-            bird.x < pipe.x + pipe.width &&
-            bird.x + bird.width > pipe.x &&
-            (bird.y < pipe.top || bird.y + bird.height > pipe.bottom)
-
-        ) {
-
-            pipe.hit = true
-            pauseAndEndGame()
-
-        }
-
+    if (pipeTimer > 100) {
+        spawnPipe();
+        pipeTimer = 0;
     }
 
-    pipes = pipes.filter(pipe => pipe.x > -80)
+    pipes.forEach(pipe => {
 
+        pipe.x -= pipeSpeed;
+
+        if (!pipe.passed && pipe.x + pipeWidth < bird.x) {
+
+            score++;
+            pipe.passed = true;
+
+            document.getElementById("score").innerText = score;
+        }
+
+        if (
+            bird.x < pipe.x + pipeWidth &&
+            bird.x + bird.width > pipe.x &&
+            (
+                bird.y < pipe.top ||
+                bird.y + bird.height > pipe.bottom
+            )
+        ) {
+            triggerGameOver();
+        }
+    });
+
+    if (pipes.length && pipes[0].x < -pipeWidth) {
+        pipes.shift();
+    }
+}
+
+function drawPipes() {
+
+    pipes.forEach(pipe => {
+
+        ctx.drawImage(
+            pipeTopImg,
+            pipe.x,
+            pipe.top - pipeTopImg.height,
+            pipeWidth,
+            pipeTopImg.height
+        );
+
+        ctx.drawImage(
+            pipeBottomImg,
+            pipe.x,
+            pipe.bottom,
+            pipeWidth,
+            pipeBottomImg.height
+        );
+    });
 }
