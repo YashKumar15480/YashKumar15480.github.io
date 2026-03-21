@@ -1,19 +1,13 @@
 body {
-
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(#70c5ce, #c9f1ff);
-    text-align: center;
-
+     margin: 0;
+     font-family: Arial;
+     background: linear-gradient(#70c5ce, #c9f1ff);
+     text-align: center;
 }
-
-.hidden {
-    display: none !important;
+ .hidden {
+     display: none !important;
 }
-
-body {
-    touch-action: none;
-
-    overflow: hidden;
-
+ body {
+     touch-action: none;
+     overflow: hidden;
 }

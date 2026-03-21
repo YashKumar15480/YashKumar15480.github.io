@@ -1,21 +1,11 @@
 canvas {
-
-    max-width: 100%;
-
-    height: auto;
-
-    border: 3px solid black;
-
-    background: #70c5ce;
-
-    display: block;
-
-    margin: auto;
-
+     max-width: 100%;
+     height: auto;
+     border: 3px solid black;
+     background: #70c5ce;
+     display: block;
+     margin: auto;
 }
-
-.score {
-
-    font-size: 24px;
-
+ .score {
+     font-size: 24px;
 }
