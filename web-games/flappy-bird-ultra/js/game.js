@@ -10,7 +10,7 @@ const birdImg = new Image();
 birdImg.src = "assets/images/default-flappy-bird.png";
 
 const bgImg = new Image();
-bgImg.src = "assets/images/background-parallax.jpeg";
+bgImg.src = "assets/images/bg/flappy-background-1.png";
 
 function startGame() {
 
