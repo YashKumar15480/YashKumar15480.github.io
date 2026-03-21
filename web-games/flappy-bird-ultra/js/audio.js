@@ -12,7 +12,6 @@ function playGameOver() {
 }
 
 function toggleMusic() {
-
     if (bgAudio.paused) {
         bgAudio.play();
     } else {
