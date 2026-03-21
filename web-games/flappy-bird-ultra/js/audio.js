@@ -45,7 +45,7 @@ function playJump() {
     if (!sfxEnabled) return;
 
     sfxJump.currentTime = 0;
-    sfxJump.volume = 0.9;
+    sfxJump.volume = 0.5;
     sfxJump.play();
 }
 
@@ -53,7 +53,7 @@ function playGameOver() {
     if (!sfxEnabled) return;
 
     sfxGameOver.currentTime = 0;
-    sfxGameOver.volume = 0.9;
+    sfxGameOver.volume = 0.5;
     sfxGameOver.play();
 }
 
