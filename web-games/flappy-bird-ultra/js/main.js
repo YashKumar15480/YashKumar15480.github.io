@@ -16,5 +16,9 @@ canvas.addEventListener("click", flap);
 function startGameFromMenu() {
     menuContainer.classList.add("hidden");
     gameContainer.classList.remove("hidden");
+
+    // 🔊 Start background music
+    bgAudio.currentTime = 0;
+    bgAudio.play().catch(() => {});
     startGame();
 }

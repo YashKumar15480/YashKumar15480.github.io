@@ -1,5 +1,5 @@
 const pipes = [];
-const pipeWidth = 90;
+const pipeWidth = 100;
 const pipeGap = 250;
 const pipeSpeed = 2;
 let pipeTimer = 0;
