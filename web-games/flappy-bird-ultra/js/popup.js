@@ -3,10 +3,14 @@ const finalScoreEl = document.getElementById("finalScore");
 const finalHighScoreEl = document.getElementById("finalHighScore");
 const restartTimerEl = document.getElementById("restartTimer");
 const backHomeBtn = document.getElementById("backHomeBtn");
+const advancedBtn = document.getElementById("advancedBtn");
+const advancedPopup = document.getElementById("advancedPopup");
+const closeAdvanced = document.getElementById("closeAdvanced");
 
 
 function triggerGameOver() {
     stopGame();
+    stopBackgroundMusic(); // 🎯 stop music on game over
     playGameOver();
     showGameOverPopup(score);
 }
@@ -63,4 +67,20 @@ backHomeBtn.addEventListener("click", () => {
     gameOverPopup.classList.add("hidden");
     document.getElementById("gameContainer").classList.add("hidden");
     document.querySelector(".menu-container").classList.remove("hidden");
+});
+
+advancedBtn.addEventListener("click", () => {
+    advancedPopup.classList.remove("hidden");
+    drawPreview();
+});
+
+closeAdvanced.addEventListener("click", () => {
+    advancedPopup.classList.add("hidden");
+});
+
+// Click outside to close
+window.addEventListener("click", (e) => {
+    if (e.target === advancedPopup) {
+        advancedPopup.classList.add("hidden");
+    }
 });

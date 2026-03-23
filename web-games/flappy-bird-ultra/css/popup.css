@@ -1,100 +1,227 @@
 .popup {
-     position: fixed;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     background: white;
-     padding: 45px 65px;
-     border-radius: 14px;
-     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-     text-align: center;
-     z-index: 1000;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     min-width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 45px 65px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
 }
- .gameover-title {
-     font-size: 50px;
-     font-weight: 800;
-     margin-bottom: 20px;
+
+.gameover-title {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
- .popup-score {
-     font-size: 22px;
-     margin: 8px 0;
+
+.popup-score {
+    font-size: 22px;
+    margin: 8px 0;
 }
+
 /* PLAY AGAIN BUTTON */
- #restartBtn {
-     margin-top: 30px;
-     padding: 16px 42px;
-     font-size: 22px;
-     font-weight: bold;
-     border: none;
-     border-radius: 10px;
-     background: linear-gradient(45deg, #4CAF50, #2e7d32);
-     color: white;
-     cursor: pointer;
-     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-     transition: all 0.2s ease;
-     width: 200px;
+#restartBtn {
+    margin-top: 30px;
+    padding: 16px 42px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #4CAF50, #2e7d32);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    width: 200px;
 }
- #restartBtn:hover {
-     transform: scale(1.08);
+
+#restartBtn:hover {
+    transform: scale(1.08);
 }
+
 /* MUSIC BUTTON */
- #popupMuteBtn {
-     margin-top: 20px;
-     padding: 10px 22px;
-     font-size: 15px;
-     border: none;
-     border-radius: 8px;
-     background: #f0f0f0;
-     color: #333;
-     cursor: pointer;
-     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-     transition: all 0.2s ease;
-     width: 160px;
+#popupMuteBtn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    width: 160px;
 }
- #popupMuteBtn:hover {
-     background: #e0e0e0;
+
+#popupMuteBtn:hover {
+    background: #e0e0e0;
 }
- .popup-timer {
-     margin-top: 15px;
-     font-size: 18px;
-     color: #666;
-     font-weight: 500;
+
+.popup-timer {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
 }
- #backHomeBtn {
-     margin-top: 18px;
-     padding: 10px 22px;
-     font-size: 15px;
-     border: none;
-     border-radius: 8px;
-     background: #e3e3e3;
-     color: #333;
-     cursor: pointer;
-     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-     transition: all 0.2s ease;
+
+#backHomeBtn {
+    margin-top: 18px;
+    padding: 10px 22px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #e3e3e3;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
 }
- #backHomeBtn:hover {
-     background: #d6d6d6;
-     transform: scale(1.05);
+
+#backHomeBtn:hover {
+    background: #d6d6d6;
+    transform: scale(1.05);
 }
- @media (max-width:600px) {
-     .popup {
-         width: 85%;
-         padding: 30px;
+
+@media (max-width:600px) {
+    .popup {
+        width: 85%;
+        padding: 30px;
+        position: fixed;
     }
-     .gameover-title {
-         font-size: 36px;
+
+    .gameover-title {
+        font-size: 36px;
     }
-     .popup-score {
-         font-size: 18px;
+
+    .popup-score {
+        font-size: 18px;
     }
-     #restartBtn {
-         width: 100%;
+
+    #restartBtn {
+        width: 100%;
     }
-     #popupMuteBtn, #backHomeBtn {
-         width: 80%;
+
+    #popupMuteBtn,
+    #backHomeBtn {
+        width: 80%;
     }
+}
+
+/* 🌑 Overlay Background */
+#advancedPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+}
+
+/* 📦 Inner Card */
+#advancedPopup .popup-content {
+    position: relative;
+    width: 340px;
+    max-width: 90%;
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 20px 25px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ❌ Close Button */
+#closeAdvanced {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    transition: 0.2s;
+}
+
+#closeAdvanced:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* 🏷 Title */
+#advancedPopup h2 {
+    margin: 10px 0 15px;
+    font-size: 22px;
+}
+
+/* 🖼 Preview Canvas FIX */
+#previewCanvas {
+    width: 120px;
+    height: 100px;
+
+    object-fit: contain;
+    border-radius: 10px;
+
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+
+    margin-bottom: 15px;
+}
+
+/* 🔘 Buttons FIX */
+#advancedPopup button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+/* ===== Advanced Popup Button Theme ===== */
+
+/* 🟡 PRIMARY (Upload) */
+#uploadBtn {
+    background: linear-gradient(45deg, #ffd54f, #ffb300);
+    color: #000;
+}
+
+#uploadBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 193, 7, 0.6);
+}
+
+/* 🎵 + 🔊 Buttons */
+#muteBtn,
+.sfx-toggle {
+    background: #f2f2f2;
+    color: #333;
+}
+
+#muteBtn:hover,
+.sfx-toggle:hover {
+    background: linear-gradient(45deg, #ffe082, #ffca28);
+    color: #000;
 }

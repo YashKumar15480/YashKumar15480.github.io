@@ -18,7 +18,6 @@ function startGameFromMenu() {
     gameContainer.classList.remove("hidden");
 
     // 🔊 Start background music
-    bgAudio.currentTime = 0;
-    bgAudio.play().catch(() => {});
+    playBackgroundMusic();
     startGame();
 }
