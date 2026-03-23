@@ -9,10 +9,22 @@ const closeAdvanced = document.getElementById("closeAdvanced");
 
 
 function triggerGameOver() {
+    if (!gameRunning) return;
+
+    // 🚫 disable input
+    inputEnabled = false;
+
+    // ⏸ stop game loop immediately
     stopGame();
-    stopBackgroundMusic(); // 🎯 stop music on game over
+
+    // 🎵 stop music + play SFX
+    stopBackgroundMusic();
     playGameOver();
-    showGameOverPopup(score);
+
+    // ⏳ Delay popup by 2 seconds
+    setTimeout(() => {
+        showGameOverPopup(score);
+    }, 2000);
 }
 
 function showGameOverPopup(score) {
@@ -38,6 +50,8 @@ function showGameOverPopup(score) {
         if (timeLeft <= 0) {
             clearInterval(timer);
             restartTimerEl.innerText = "Press Space or Click to Restart";
+
+            inputEnabled = true; // ✅ unlock here ONLY
         }
     }, 1000);
 }
@@ -45,28 +59,37 @@ function showGameOverPopup(score) {
 // 🔁 Restart handling
 document.addEventListener("keydown", e => {
     const isPopupVisible = !gameOverPopup.classList.contains("hidden");
-    if (e.code === "Space" && isPopupVisible) {
+    if (e.code === "Space" && isPopupVisible && inputEnabled) {
         restartGame();
     }
 });
 
 document.getElementById("game").addEventListener("click", () => {
     const isPopupVisible = !gameOverPopup.classList.contains("hidden");
-    if (isPopupVisible) {
+
+    if (isPopupVisible && inputEnabled) {
         restartGame();
     }
 });
 
 function restartGame() {
     gameOverPopup.classList.add("hidden");
+
+    // 🎵 restart background music (respect user setting)
+    playBackgroundMusic();
+
     startGame();
 }
 
 // 🏠 Back to menu
 backHomeBtn.addEventListener("click", () => {
     gameOverPopup.classList.add("hidden");
+
     document.getElementById("gameContainer").classList.add("hidden");
     document.querySelector(".menu-container").classList.remove("hidden");
+
+    // ✅ Re-enable input immediately
+    inputEnabled = true;
 });
 
 advancedBtn.addEventListener("click", () => {
