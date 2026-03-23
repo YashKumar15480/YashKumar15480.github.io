@@ -1,22 +1,46 @@
+const uploadBtn = document.getElementById("uploadBtn");
+const imageUpload = document.getElementById("imageUpload");
 const previewCanvas = document.getElementById("previewCanvas");
 const previewCtx = previewCanvas.getContext("2d");
 
-imageUpload.addEventListener("change", function() {
+// 📂 Open file picker when button clicked
+uploadBtn.addEventListener("click", () => {
+    imageUpload.click();
+});
+
+// 📥 Handle image upload
+imageUpload.addEventListener("change", function () {
     const file = this.files[0];
     if (!file) return;
 
     const reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         birdImg.src = e.target.result;
-        drawPreview();
+
+        // Wait for image to load before drawing
+        birdImg.onload = () => {
+            drawPreview();
+        };
     };
 
     reader.readAsDataURL(file);
 });
 
-// 🎨 Draw preview
+// 🖼 Draw preview canvas
 function drawPreview() {
     previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
-    previewCtx.drawImage(birdImg, 20, 20, 80, 60);
+
+    const scale = Math.min(
+        previewCanvas.width / birdImg.width,
+        previewCanvas.height / birdImg.height
+    );
+
+    const width = birdImg.width * scale;
+    const height = birdImg.height * scale;
+
+    const x = (previewCanvas.width - width) / 2;
+    const y = (previewCanvas.height - height) / 2;
+
+    previewCtx.drawImage(birdImg, x, y, width, height);
 }
