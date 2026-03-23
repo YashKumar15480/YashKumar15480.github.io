@@ -5,19 +5,22 @@ const sfxGameOver = document.getElementById("sfxGameOver");
 const muteBtn = document.getElementById("muteBtn");
 const popupMuteBtn = document.getElementById("popupMuteBtn");
 
-// 🔊 SFX control
+// 🔊 Audio control
 let sfxEnabled = true;
+let musicEnabled = true;
 
 bgAudio.volume = 0.05;
 
 // 🎵 BACKGROUND MUSIC TOGGLE
 function toggleMusic() {
-    if (bgAudio.paused) {
+    musicEnabled = !musicEnabled;
+
+    if (musicEnabled) {
         bgAudio.play();
-        updateMusicButtons("Click to Mute Music");
+        updateMusicButtons("Mute Music");
     } else {
         bgAudio.pause();
-        updateMusicButtons("Click to Play Music");
+        updateMusicButtons("Play Music");
     }
 }
 
@@ -66,6 +69,18 @@ document.addEventListener("click", e => {
         toggleSFX();
     }
 });
+
+function playBackgroundMusic() {
+    if (musicEnabled) {
+        bgAudio.currentTime = 0;
+        bgAudio.play().catch(() => {});
+    }
+}
+
+function stopBackgroundMusic() {
+    bgAudio.pause();
+    bgAudio.currentTime = 0;
+}
 
 // Initialize button labels
 updateMusicButtons("Play Background Music");

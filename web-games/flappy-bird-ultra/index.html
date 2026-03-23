@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/popup.css">
     </head>
     <body>
-        <!-- HOME MENU -->
+        <!-- 🏠 HOME MENU -->
         <div class="menu-container">
             <h1 class="game-title">Flappy Bird Ultra</h1>
             <p class="highscore">
@@ -22,24 +22,12 @@
                 <button id="startBtn" class="start-button">
                     Start Game (Press Space)
                 </button>
-                <button id="uploadBtn">
-                    Upload Custom Bird Image
+                <button id="advancedBtn">
+                    Advanced Features
                 </button>
-                <button id="muteBtn">
-                    Enjoy the music
-                </button>
-                <button class="sfx-toggle">
-                    Playing SFX Audio
-                </button>
-                <input
-                    type="file"
-                    id="imageUpload"
-                    accept="image/*"
-                    class="hidden"
-                >
             </div>
         </div>
-        <!-- GAME AREA -->
+        <!-- 🎮 GAME AREA -->
         <div id="gameContainer" class="hidden">
             <p class="score">
                 Score:
@@ -47,7 +35,7 @@
             </p>
             <canvas id="game" width="420" height="640"></canvas>
         </div>
-        <!-- GAME OVER POPUP -->
+        <!-- 💀 GAME OVER POPUP -->
         <div id="gameOverPopup" class="popup hidden">
             <h1 class="gameover-title">Game Over</h1>
             <p class="popup-score">
@@ -61,21 +49,32 @@
             <p id="restartTimer" class="popup-timer">
                 Restart available in 3
             </p>
-            <button id="popupMuteBtn">
-                Music Button
-            </button>
-            <button class="sfx-toggle">
-                Playing SFX Audio
-            </button>
-            <button id="backHomeBtn">
-                Back to Home
-            </button>
+            <button id="popupMuteBtn">Mute Music</button>
+            <button class="sfx-toggle">Playing SFX Audio</button>
+            <button id="backHomeBtn">Back to Home</button>
         </div>
-        <!-- BACKGROUND AUDIO --->
+        <!-- ⚙ ADVANCED FEATURES POPUP -->
+        <div id="advancedPopup" class="hidden">
+            <div class="popup-content">
+                <span id="closeAdvanced">✖</span>
+                <h2>Advanced Features</h2>
+                <canvas id="previewCanvas" width="120" height="100"></canvas>
+                <button id="uploadBtn">Upload Custom Bird Image</button>
+                <button id="muteBtn">Mute Music</button>
+                <button class="sfx-toggle">Playing SFX Audio</button>
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                    class="hidden"
+                >
+            </div>
+        </div>
+        <!-- 🎵 BACKGROUND AUDIO -->
         <audio id="bgAudio" loop>
             <source src="assets/audio/background-music-1.mp3" type="audio/mpeg">
         </audio>
-        <!-- SFX AUDIO -->
+        <!-- 🔊 SFX AUDIO -->
         <audio id="sfxJump">
             <source src="assets/audio/sfx-flappy-jump.mp3" type="audio/mpeg">
         </audio>
@@ -85,7 +84,7 @@
         <audio id="sfxButton">
             <source src="assets/audio/sfx-flappy-button-click.mp3" type="audio/mpeg">
         </audio>
-        <!-- JAVASCRIPT FILES -->
+        <!-- 📜 JAVASCRIPT -->
         <script src="js/cookie.js"></script>
         <script src="js/audio.js"></script>
         <script src="js/upload.js"></script>
