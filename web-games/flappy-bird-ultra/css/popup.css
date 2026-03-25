@@ -225,3 +225,26 @@
     background: linear-gradient(45deg, #ffe082, #ffca28);
     color: #000;
 }
+/* 🔊 SFX Button FIX inside popup */
+#gameOverPopup .sfx-toggle {
+    margin-top: 12px;
+    padding: 10px 22px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+
+    background: #f0f0f0;
+    color: #333;
+
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+}
+
+/* 🟡 Hover effect (match your theme) */
+#gameOverPopup .sfx-toggle:hover {
+    background: linear-gradient(45deg, #ffe082, #ffca28);
+    color: #000;
+    transform: scale(1.05);
+}
