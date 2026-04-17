@@ -27,7 +27,7 @@ imageUpload.addEventListener("change", function () {
     reader.readAsDataURL(file);
 });
 
-// 🖼 Draw preview canvasss
+// 🖼 Draw preview canvasss added
 function drawPreview() {
     previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
 
