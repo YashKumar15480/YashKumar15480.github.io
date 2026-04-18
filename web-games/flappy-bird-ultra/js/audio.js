@@ -11,7 +11,7 @@ let musicEnabled = true;
 
 bgAudio.volume = 0.05;
 
-// 🎵 BACKGROUND MUSIC TOGGLE
+// 🎵 BACKGROUND MUSIC TOGGLE added
 function toggleMusic() {
     musicEnabled = !musicEnabled;
 
