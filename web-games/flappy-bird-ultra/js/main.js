@@ -20,7 +20,7 @@ canvas.addEventListener("click", () => {
     if (!inputEnabled) return;
     flap();
 });
-  // 🔊 Some random commenttttt
+  
 function startGameFromMenu() {
     menuContainer.classList.add("hidden");
     gameContainer.classList.remove("hidden");
