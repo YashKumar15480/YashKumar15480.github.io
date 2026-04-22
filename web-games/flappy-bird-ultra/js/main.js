@@ -25,7 +25,7 @@ function startGameFromMenu() {
     menuContainer.classList.add("hidden");
     gameContainer.classList.remove("hidden");
 
-    // 🔊 Toggle background music
+ 
     playBackgroundMusic();
     startGame();
 }
