@@ -6,7 +6,7 @@ let inputEnabled = true;
 startBtn.addEventListener("click", startGameFromMenu);
 
 document.addEventListener("keydown", e => {
-    if (!inputEnabled) return; // 🚫 block input
+    if (!inputEnabled) return;
 
     if (e.code === "Space") {
         if (!gameRunning) {
