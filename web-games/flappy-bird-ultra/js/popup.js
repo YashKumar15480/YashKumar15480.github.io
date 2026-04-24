@@ -17,7 +17,7 @@ function triggerGameOver() {
 
     stopGame();
 
-    // 🎵 stop music + play SFX
+  
     stopBackgroundMusic();
     playGameOver();
 
