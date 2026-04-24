@@ -14,7 +14,7 @@ function triggerGameOver() {
     // 🚫 disable input
     inputEnabled = false;
 
-    // ⏸ stop game loop immediately
+
     stopGame();
 
     // 🎵 stop music + play SFX
