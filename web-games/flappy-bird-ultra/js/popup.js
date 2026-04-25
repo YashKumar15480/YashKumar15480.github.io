@@ -11,7 +11,7 @@ const closeAdvanced = document.getElementById("closeAdvanced");
 function triggerGameOver() {
     if (!gameRunning) return;
 
-    // 🚫 disable input
+   
     inputEnabled = false;
 
 
