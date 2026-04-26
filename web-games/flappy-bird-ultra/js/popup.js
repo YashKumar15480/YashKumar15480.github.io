@@ -21,7 +21,7 @@ function triggerGameOver() {
     stopBackgroundMusic();
     playGameOver();
 
-    // ⏳ Delay popup by 2 seconds
+    
     setTimeout(() => {
         showGameOverPopup(score);
     }, 2000);
