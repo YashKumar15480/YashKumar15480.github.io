@@ -28,7 +28,7 @@ function triggerGameOver() {
 }
 
 function showGameOverPopup(score) {
-    // ✅ Update score
+
     finalScoreEl.innerText = score;
 
     // ✅ Update high score
