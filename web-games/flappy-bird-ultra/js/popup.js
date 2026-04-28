@@ -31,7 +31,7 @@ function showGameOverPopup(score) {
 
     finalScoreEl.innerText = score;
 
-    // ✅ Update high score
+   
     setHighScore(score);
     const high = getHighScore();
     finalHighScoreEl.innerText = high;
