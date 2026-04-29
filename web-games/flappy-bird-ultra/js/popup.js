@@ -36,7 +36,7 @@ function showGameOverPopup(score) {
     const high = getHighScore();
     finalHighScoreEl.innerText = high;
 
-    // ✅ Show popup
+   
     gameOverPopup.classList.remove("hidden");
 
     // ⏳ Restart timer (3 → 0)
