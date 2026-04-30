@@ -39,7 +39,7 @@ function showGameOverPopup(score) {
    
     gameOverPopup.classList.remove("hidden");
 
-    // ⏳ Restart timer (3 → 0)
+   
     let timeLeft = 3;
     restartTimerEl.innerText = `Restart available in ${timeLeft}`;
 
