@@ -56,7 +56,7 @@ function showGameOverPopup(score) {
     }, 1000);
 }
 
-// 🔁 Restart handling
+
 document.addEventListener("keydown", e => {
     const isPopupVisible = !gameOverPopup.classList.contains("hidden");
     if (e.code === "Space" && isPopupVisible && inputEnabled) {
