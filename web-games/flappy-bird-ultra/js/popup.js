@@ -51,7 +51,7 @@ function showGameOverPopup(score) {
             clearInterval(timer);
             restartTimerEl.innerText = "Press Space or Click to Restart";
 
-            inputEnabled = true; // ✅ unlock here ONLY
+            inputEnabled = true; 
         }
     }, 1000);
 }
