@@ -75,7 +75,7 @@ document.getElementById("game").addEventListener("click", () => {
 function restartGame() {
     gameOverPopup.classList.add("hidden");
 
-    // 🎵 restart background music (respect user setting)
+ 
     playBackgroundMusic();
 
     startGame();
