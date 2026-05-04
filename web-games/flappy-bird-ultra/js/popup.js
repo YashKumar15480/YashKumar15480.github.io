@@ -81,7 +81,7 @@ function restartGame() {
     startGame();
 }
 
-// 🏠 Back to menu
+
 backHomeBtn.addEventListener("click", () => {
     gameOverPopup.classList.add("hidden");
 
