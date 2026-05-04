@@ -88,7 +88,7 @@ backHomeBtn.addEventListener("click", () => {
     document.getElementById("gameContainer").classList.add("hidden");
     document.querySelector(".menu-container").classList.remove("hidden");
 
-    // ✅ Re-enable input immediately
+    
     inputEnabled = true;
 });
 
