@@ -101,7 +101,7 @@ closeAdvanced.addEventListener("click", () => {
     advancedPopup.classList.add("hidden");
 });
 
-// Click outside to close
+
 window.addEventListener("click", (e) => {
     if (e.target === advancedPopup) {
         advancedPopup.classList.add("hidden");
