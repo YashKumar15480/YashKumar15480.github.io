@@ -12,6 +12,8 @@ let musicEnabled = true;
 bgAudio.volume = 0.05;
 
 // 🎵 BACKGROUND MUSIC TOGGLE
+
+
 function toggleMusic() {
     musicEnabled = !musicEnabled;
 
@@ -29,7 +31,7 @@ function updateMusicButtons(text) {
     if (popupMuteBtn) popupMuteBtn.innerText = text;
 }
 
-// 🔊 SFX TOGGLE
+
 function toggleSFX() {
     sfxEnabled = !sfxEnabled;
     updateSFXButtons();
