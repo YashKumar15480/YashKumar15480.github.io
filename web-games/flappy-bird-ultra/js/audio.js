@@ -45,7 +45,7 @@ function updateSFXButtons() {
     });
 }
 
-// 🎮 SFX PLAY
+
 function playJump() {
     if (!sfxEnabled) return;
 
