@@ -62,7 +62,7 @@ function playGameOver() {
     sfxGameOver.play();
 }
 
-// 🎧 Attach events (IMPORTANT)
+
 if (muteBtn) muteBtn.addEventListener("click", toggleMusic);
 if (popupMuteBtn) popupMuteBtn.addEventListener("click", toggleMusic);
 
