@@ -84,6 +84,6 @@ function stopBackgroundMusic() {
     bgAudio.currentTime = 0;
 }
 
-// Initialize button labels
+
 updateMusicButtons("Play Background Music");
 updateSFXButtons();
