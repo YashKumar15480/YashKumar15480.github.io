@@ -18,7 +18,7 @@ imageUpload.addEventListener("change", function () {
     reader.onload = function (e) {
         birdImg.src = e.target.result;
 
-        // Wait for image to load before drawing
+        
         birdImg.onload = () => {
             drawPreview();
         };
