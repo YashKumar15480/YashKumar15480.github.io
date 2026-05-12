@@ -8,7 +8,6 @@ uploadBtn.addEventListener("click", () => {
     imageUpload.click();
 });
 
-// 📥 Handle image upload
 imageUpload.addEventListener("change", function () {
     const file = this.files[0];
     if (!file) return;
