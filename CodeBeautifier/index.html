@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Beautifier</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>Developer Tools</h2>
+
+            <button id="closeMenuBtn" class="icon-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <ul class="tool-list">
+
+            <li data-tool="html">
+                <i class="fa-brands fa-html5"></i>
+                HTML Beautifier
+            </li>
+
+            <li data-tool="css">
+                <i class="fa-brands fa-css3-alt"></i>
+                CSS Beautifier
+            </li>
+
+            <li data-tool="js">
+                <i class="fa-brands fa-js"></i>
+                JavaScript Beautifier
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button id="menuBtn" class="icon-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <h1 id="toolTitle">
+                    HTML Beautifier
+                </h1>
+
+            </div>
+
+            <button id="themeToggle" class="icon-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+        <!-- Input Section -->
+        <section class="editor-section">
+
+            <div class="section-header">
+                <h2>Input Code</h2>
+            </div>
+
+            <div id="inputEditor" class="editor"></div>
+
+        </section>
+
+        <!-- Main Actions -->
+        <section class="action-buttons">
+
+            <button id="beautifyBtn" class="primary-btn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Beautify
+            </button>
+
+            <button id="minifyBtn">
+                <i class="fa-solid fa-compress"></i>
+                Minify
+            </button>
+
+            <button id="clearBtn">
+                <i class="fa-solid fa-trash"></i>
+                Clear
+            </button>
+
+        </section>
+
+        <!-- Output Section -->
+        <section class="editor-section">
+
+            <div class="section-header">
+                <h2>Output Code</h2>
+            </div>
+
+            <div id="outputEditor" class="editor"></div>
+
+        </section>
+
+        <!-- Output Actions -->
+        <section class="action-buttons">
+
+            <button id="copyBtn">
+                <i class="fa-solid fa-copy"></i>
+                Copy Output
+            </button>
+
+            <button id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                Download
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Beautifier Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.min.js"></script>
+
+    <!-- Terser -->
+    <script src="https://cdn.jsdelivr.net/npm/terser/dist/bundle.min.js"></script>
+
+    <!-- HTML Minifier -->
+    <script src="https://cdn.jsdelivr.net/npm/html-minifier-terser/dist/htmlminifier.umd.bundle.js"></script>
+
+    <!-- Clean CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/clean-css-browser/dist/clean-css.js"></script>
+
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/beautifier.js"></script>
+    <script src="js/minifier.js"></script>
+    <script src="js/clipboard.js"></script>
+    <script src="js/download.js"></script>
+
+</body>
+</html>
