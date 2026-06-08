@@ -1,0 +1,67 @@
+/* =========================
+   Light Theme (Default)
+========================= */
+
+:root {
+
+    --bg-color: #f5f7fb;
+
+    --panel-color: #ffffff;
+
+    --text-color: #1f2937;
+
+    --border-color: #d1d5db;
+
+    --hover-color: #f3f4f6;
+
+    --active-color: #e5e7eb;
+
+    --primary-color: #2563eb;
+
+    --success-color: #16a34a;
+
+    --danger-color: #dc2626;
+}
+
+/* =========================
+   Dark Theme
+========================= */
+
+[data-theme="dark"] {
+
+    --bg-color: #0f172a;
+
+    --panel-color: #1e293b;
+
+    --text-color: #f8fafc;
+
+    --border-color: #334155;
+
+    --hover-color: #2d3b52;
+
+    --active-color: #334155;
+
+    --primary-color: #3b82f6;
+
+    --success-color: #22c55e;
+
+    --danger-color: #ef4444;
+}
+
+/* =========================
+   Smooth Theme Transition
+========================= */
+
+body,
+.sidebar,
+.topbar,
+.editor,
+button,
+.icon-btn,
+.tool-list li,
+.action-buttons button {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}

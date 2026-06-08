@@ -1,0 +1,344 @@
+/* =========================
+   Global
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================
+   Overlay
+========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.25s ease;
+
+    z-index: 998;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: -280px;
+
+    width: 280px;
+    height: 100vh;
+
+    background: var(--panel-color);
+
+    border-right: 1px solid var(--border-color);
+
+    padding: 20px;
+
+    transition: left 0.25s ease;
+
+    z-index: 999;
+
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tool-list {
+    list-style: none;
+}
+
+.tool-list li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-bottom: 8px;
+
+    user-select: none;
+}
+
+.tool-list li:hover {
+    background: var(--hover-color);
+}
+
+.tool-list li.active {
+    background: var(--active-color);
+    font-weight: 600;
+}
+
+.tool-list i {
+    width: 20px;
+}
+
+/* =========================
+   Main Layout
+========================= */
+
+.main-container {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+/* =========================
+   Topbar
+========================= */
+
+.topbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.topbar-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.topbar h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    background: var(--panel-color);
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.icon-btn:hover {
+    background: var(--hover-color);
+}
+
+.action-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 16px 0 24px;
+}
+
+.action-buttons button {
+    border: none;
+
+    background: var(--panel-color);
+
+    color: var(--text-color);
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+
+    border: 1px solid var(--border-color);
+}
+
+.action-buttons button:hover {
+    background: var(--hover-color);
+}
+
+.action-buttons button i {
+    margin-right: 8px;
+}
+
+.primary-btn {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   Editor Section
+========================= */
+
+.editor-section {
+    margin-bottom: 10px;
+}
+
+.section-header {
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* =========================
+   Monaco Containers
+========================= */
+
+.editor {
+    width: 100%;
+
+    height: 380px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: var(--panel-color);
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 992px) {
+
+    .editor {
+        height: 320px;
+    }
+
+    .topbar h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main-container {
+        padding: 15px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .editor {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .topbar {
+        gap: 10px;
+    }
+
+    .topbar h1 {
+        font-size: 1rem;
+    }
+
+    .sidebar {
+        width: 260px;
+        left: -260px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+}
