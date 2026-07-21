@@ -6,7 +6,7 @@ import {
     clearEditor,
     getEditorText,
     setEditorText
-} from "./utils.js";
+} from "./utils/utils.js";
 
 import { compareText } from "./compare.js";
 

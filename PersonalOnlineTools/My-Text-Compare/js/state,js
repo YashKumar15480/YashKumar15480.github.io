@@ -1,0 +1,92 @@
+/**
+ * ============================================================
+ * Application State
+ * ============================================================
+ */
+
+export const AppState = {
+
+    leftText: "",
+
+    rightText: "",
+
+    matchedWords: 0,
+
+    differentWords: 0,
+
+    similarity: 100,
+
+    theme: "light",
+
+    comparisonPerformed: false,
+
+    ignoreCase: false,
+
+    ignoreExtraSpaces: false
+
+};
+
+/**
+ * Reset comparison statistics
+ */
+export function resetComparisonState() {
+
+    AppState.matchedWords = 0;
+
+    AppState.differentWords = 0;
+
+    AppState.similarity = 100;
+
+    AppState.comparisonPerformed = false;
+
+}
+
+/**
+ * Update left text
+ */
+export function setLeftText(text) {
+
+    AppState.leftText = text;
+
+}
+
+/**
+ * Update right text
+ */
+export function setRightText(text) {
+
+    AppState.rightText = text;
+
+}
+
+/**
+ * Update comparison statistics
+ */
+export function setComparisonResult({
+
+    matchedWords,
+
+    differentWords,
+
+    similarity
+
+}) {
+
+    AppState.matchedWords = matchedWords;
+
+    AppState.differentWords = differentWords;
+
+    AppState.similarity = similarity;
+
+    AppState.comparisonPerformed = true;
+
+}
+
+/**
+ * Change application theme
+ */
+export function setTheme(theme) {
+
+    AppState.theme = theme;
+
+}
