@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Compare two text blocks and highlight unmatched words.">
+
+    <title>My Text Compare</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="./assets/favicon.png">
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/toolbar.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/editor.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ========================================= -->
+    <!-- Header -->
+    <!-- ========================================= -->
+
+    <header class="app-header">
+
+        <h1>My Text Compare</h1>
+
+        <p>
+            Compare two text blocks and instantly find
+            unmatched words.
+        </p>
+
+    </header>
+
+    <!-- ========================================= -->
+    <!-- Global Toolbar -->
+    <!-- ========================================= -->
+
+    <section class="toolbar">
+
+        <div class="toolbar-left">
+
+            <button
+                id="compareBtn"
+                class="btn btn-primary">
+
+                Compare
+
+            </button>
+
+            <button
+                id="clearBtn"
+                class="btn">
+
+                Clear
+
+            </button>
+
+            <button
+                id="swapBtn"
+                class="btn">
+
+                Swap
+
+            </button>
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <label class="checkbox-container">
+
+                <input
+                    type="checkbox"
+                    id="ignoreCase">
+
+                Ignore Case
+
+            </label>
+
+            <label class="checkbox-container">
+
+                <input
+                    type="checkbox"
+                    id="ignoreSpaces">
+
+                Ignore Extra Spaces
+
+            </label>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Editors -->
+    <!-- ========================================= -->
+
+    <section class="editor-wrapper">
+
+        <!-- LEFT -->
+
+        <article class="editor-panel">
+
+            <!-- Header -->
+
+            <div class="editor-header">
+
+                <div class="editor-title">
+
+                    <h2>Left Text</h2>
+
+                    <button
+                        id="copyLeftBtn"
+                        class="btn">
+
+                        Copy
+
+                    </button>
+
+                </div>
+
+                <div class="stats">
+
+                    <span>
+                        Characters :
+                        <strong id="leftCharCount">0</strong>
+                    </span>
+
+                    <span>
+                        Words :
+                        <strong id="leftWordCount">0</strong>
+                    </span>
+
+                    <span>
+                        Lines :
+                        <strong id="leftLineCount">0</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Body -->
+
+            <div class="editor-body">
+
+                <!-- Line Numbers -->
+
+                <div
+                    id="leftLineNumbers"
+                    class="line-numbers">
+
+                    1
+
+                </div>
+
+                <!-- Editor -->
+
+                <div
+
+                    id="leftEditor"
+
+                    class="editor"
+
+                    contenteditable="true"
+
+                    spellcheck="false"
+
+                    data-placeholder="Paste your left text here...">
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- RIGHT -->
+
+        <article class="editor-panel">
+
+            <div class="editor-header">
+
+                <div class="editor-title">
+
+                    <h2>Right Text</h2>
+
+                    <button
+                        id="copyRightBtn"
+                        class="btn">
+
+                        Copy
+
+                    </button>
+
+                </div>
+
+                <div class="stats">
+
+                    <span>
+                        Characters :
+                        <strong id="rightCharCount">0</strong>
+                    </span>
+
+                    <span>
+                        Words :
+                        <strong id="rightWordCount">0</strong>
+                    </span>
+
+                    <span>
+                        Lines :
+                        <strong id="rightLineCount">0</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="editor-body">
+
+                <div
+                    id="rightLineNumbers"
+                    class="line-numbers">
+
+                    1
+
+                </div>
+
+                <div
+
+                    id="rightEditor"
+
+                    class="editor"
+
+                    contenteditable="true"
+
+                    spellcheck="false"
+
+                    data-placeholder="Paste your right text here...">
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Statistics -->
+    <!-- ========================================= -->
+
+    <section class="summary-panel">
+
+        <div class="summary-card">
+
+            <span class="summary-title">
+
+                Matched
+
+            </span>
+
+            <strong id="matchedCount">
+
+                0
+
+            </strong>
+
+        </div>
+
+        <div class="summary-card">
+
+            <span class="summary-title">
+
+                Different
+
+            </span>
+
+            <strong id="differentCount">
+
+                0
+
+            </strong>
+
+        </div>
+
+        <div class="summary-card">
+
+            <span class="summary-title">
+
+                Similarity
+
+            </span>
+
+            <strong id="similarityPercentage">
+
+                100%
+
+            </strong>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Footer -->
+    <!-- ========================================= -->
+
+    <footer class="status-bar">
+
+        <span id="statusText">
+
+            Ready
+
+        </span>
+
+    </footer>
+
+</div>
+
+<script
+    type="module"
+    src="./js/app.js">
+
+</script>
+
+</body>
+
+</html>

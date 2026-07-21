@@ -1,0 +1,284 @@
+/* ==========================================
+   Editor Container
+========================================== */
+
+.editor {
+
+    flex: 1;
+
+    min-height: 550px;
+    max-height: 70vh;
+
+    padding: 20px;
+
+    overflow: auto;
+
+    outline: none;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    font-family:
+        Consolas,
+        "Cascadia Code",
+        "Courier New",
+        monospace;
+
+    background: #ffffff;
+
+    color: var(--text-primary);
+
+    caret-color: var(--primary-color);
+}
+
+/* ==========================================
+   Placeholder
+========================================== */
+
+.editor:empty::before {
+
+    content: attr(data-placeholder);
+
+    color: #9ca3af;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+.editor::-webkit-scrollbar {
+
+    width: 12px;
+
+    height: 12px;
+}
+
+.editor::-webkit-scrollbar-track {
+
+    background: #f3f4f6;
+}
+
+.editor::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 8px;
+
+    border: 2px solid #f3f4f6;
+}
+
+.editor::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+}
+
+/* Firefox */
+
+.editor {
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #cbd5e1 #f3f4f6;
+}
+
+/* ==========================================
+   Focus State
+========================================== */
+
+.editor:focus {
+
+    background: #ffffff;
+}
+
+/* ==========================================
+   Difference Highlight
+========================================== */
+
+.diff-added {
+
+    background: #fff59d;
+
+    padding: 2px 1px;
+
+    border-radius: 3px;
+}
+
+.diff-removed {
+
+    background: #fff59d;
+
+    padding: 2px 1px;
+
+    border-radius: 3px;
+}
+
+.diff-changed {
+
+    background: #ffe082;
+
+    padding: 2px 1px;
+
+    border-radius: 3px;
+}
+
+/* ==========================================
+   Current Selection
+========================================== */
+
+.editor::selection {
+
+    background: rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================
+   Empty Editor State
+========================================== */
+
+.editor.empty {
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #fcfcfc
+        );
+}
+
+/* ==========================================
+   Readonly Mode (Future)
+========================================== */
+
+.editor.readonly {
+
+    background: #f8fafc;
+
+    cursor: default;
+}
+
+/* ==========================================
+   Line Highlight (Future)
+========================================== */
+
+.diff-line {
+
+    display: block;
+
+    width: 100%;
+}
+
+.diff-line-added {
+
+    background: rgba(255, 245, 157, 0.35);
+}
+
+.diff-line-removed {
+
+    background: rgba(255, 245, 157, 0.35);
+}
+
+/* ==========================================
+   Code Style Text
+========================================== */
+
+.editor code {
+
+    background: #f3f4f6;
+
+    padding: 2px 4px;
+
+    border-radius: 4px;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .editor {
+
+        min-height: 350px;
+
+        max-height: 500px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .editor {
+
+        min-height: 280px;
+
+        padding: 16px;
+
+        font-size: 14px;
+    }
+
+}
+/* ==========================================
+   Editor Body
+========================================== */
+
+.editor-body {
+
+    display: flex;
+
+    flex: 1;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   Editor Title
+========================================== */
+
+.editor-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+/* ==========================================
+   Line Numbers
+========================================== */
+
+.line-numbers {
+
+    width: 55px;
+
+    background: #f7f7f7;
+
+    border-right: 1px solid var(--border);
+
+    padding: 20px 10px;
+
+    overflow: hidden;
+
+    text-align: right;
+
+    user-select: none;
+
+    font-family: Consolas, monospace;
+
+    line-height: 1.7;
+
+    color: #9ca3af;
+
+    font-size: 15px;
+}
+
+.line-numbers div {
+
+    height: 25.5px;
+}

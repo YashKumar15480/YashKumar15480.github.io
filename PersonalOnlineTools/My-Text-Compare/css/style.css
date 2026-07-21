@@ -1,0 +1,403 @@
+/* ==========================================
+   Global Reset
+========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Root Variables
+========================================== */
+
+:root {
+
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --background: #f5f7fb;
+    --surface: #ffffff;
+
+    --border: #d8dee9;
+
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+
+    --success: #16a34a;
+    --warning: #ca8a04;
+    --danger: #dc2626;
+
+    --shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+
+    --radius: 12px;
+
+    --transition: 0.25s ease;
+}
+
+/* ==========================================
+   Body
+========================================== */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text-primary);
+
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Main Container
+========================================== */
+
+.app-container {
+
+    width: min(1500px, 96%);
+
+    margin: 30px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.app-header {
+
+    text-align: center;
+}
+
+.app-header h1 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.app-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   Toolbar
+========================================== */
+
+.toolbar {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    padding: 16px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.toolbar-left,
+.toolbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.btn {
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text-primary);
+
+    border-radius: 8px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+
+    background: #eef2ff;
+}
+
+.btn-primary {
+
+    background: var(--primary-color);
+
+    color: white;
+
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-hover);
+}
+
+/* ==========================================
+   Checkbox
+========================================== */
+
+.checkbox-container {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    font-size: 0.92rem;
+}
+
+/* ==========================================
+   Editors Layout
+========================================== */
+
+.editor-wrapper {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.editor-panel {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   Editor Header
+========================================== */
+
+.editor-header {
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: #fafafa;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.editor-header h2 {
+
+    font-size: 1rem;
+
+    font-weight: 600;
+}
+
+/* ==========================================
+   Stats
+========================================== */
+
+.stats {
+
+    display: flex;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    font-size: 0.88rem;
+
+    color: var(--text-secondary);
+}
+
+.stats strong {
+
+    color: var(--text-primary);
+}
+
+/* ==========================================
+   Summary
+========================================== */
+
+.summary-panel {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.summary-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.summary-title {
+
+    display: block;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 10px;
+
+    font-size: 0.9rem;
+}
+
+.summary-card strong {
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+}
+
+/* ==========================================
+   Status Bar
+========================================== */
+
+.status-bar {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    padding: 14px 18px;
+
+    font-size: 0.9rem;
+
+    color: var(--text-secondary);
+}
+
+/* ==========================================
+   Utility
+========================================== */
+
+.hidden {
+
+    display: none !important;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .editor-wrapper {
+
+        grid-template-columns: 1fr;
+    }
+
+    .summary-panel {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .toolbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .toolbar-left,
+    .toolbar-right {
+
+        justify-content: center;
+    }
+
+    .stats {
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+    .app-header h1 {
+
+        font-size: 1.6rem;
+    }
+
+}

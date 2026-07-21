@@ -1,0 +1,136 @@
+/* ==========================================
+   Toolbar Specific Styles
+========================================== */
+
+/* Sticky toolbar */
+.toolbar {
+
+    position: sticky;
+
+    top: 16px;
+
+    z-index: 100;
+}
+
+/* Toolbar Buttons */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 110px;
+
+    height: 42px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+.btn:active {
+
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+/* Focus State */
+
+.btn:focus-visible,
+.checkbox-container input:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+
+    outline-offset: 2px;
+}
+
+/* Checkbox */
+
+.checkbox-container input {
+
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+
+    accent-color: var(--primary-color);
+}
+
+/* Hover */
+
+.checkbox-container:hover {
+
+    color: var(--primary-color);
+}
+
+/* Toolbar Divider (future use) */
+
+.toolbar-divider {
+
+    width: 1px;
+
+    height: 32px;
+
+    background: var(--border);
+}
+
+/* Status Indicator */
+
+.status-indicator {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 0.9rem;
+
+    color: var(--text-secondary);
+}
+
+.status-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .toolbar-left,
+    .toolbar-right {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .btn {
+
+        flex: 1;
+
+        min-width: 100px;
+
+        max-width: 180px;
+    }
+
+}
