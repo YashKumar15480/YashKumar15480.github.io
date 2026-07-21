@@ -1,77 +1,18 @@
-/**
- * ============================================================
- * Editor Counters
- * ============================================================
- */
+import {getEditorText,getWordCount,getLineCount,generateLineNumbers} from "../utils/utils.js";
 
-import {
+export function updateCounters(editor,charEl,wordEl,lineEl,lineNoEl){
+ const text=getEditorText(editor);
+ const chars=text.length;
+ const words=getWordCount(text);
+ const lines=Math.max(getLineCount(text),1);
 
-    getEditorText,
-    getWordCount,
-    getLineCount,
-    generateLineNumbers
-
-} from "../utils/utils.js";
-
-export function updateEditorCounters(
-
-    editor,
-    characterElement,
-    wordElement,
-    lineElement,
-    lineNumberElement
-
-) {
-
-    const text = getEditorText(editor);
-
-    const characters = text.length;
-
-    const words = getWordCount(text);
-
-    const lines = getLineCount(text);
-
-    characterElement.textContent = characters;
-
-    wordElement.textContent = words;
-
-    lineElement.textContent = lines;
-
-    if (lineNumberElement) {
-
-        lineNumberElement.innerHTML =
-            generateLineNumbers(
-                Math.max(lines, 1)
-            );
-
-    }
-
+ if(charEl) charEl.textContent=chars;
+ if(wordEl) wordEl.textContent=words;
+ if(lineEl) lineEl.textContent=lines===1&&text===""?0:lines;
+ if(lineNoEl) lineNoEl.innerHTML=generateLineNumbers(lines);
 }
 
-export function refreshAllCounters(dom) {
-
-    updateEditorCounters(
-
-        dom.leftEditor,
-
-        dom.leftCharCount,
-        dom.leftWordCount,
-        dom.leftLineCount,
-
-        dom.leftLineNumbers
-
-    );
-
-    updateEditorCounters(
-
-        dom.rightEditor,
-
-        dom.rightCharCount,
-        dom.rightWordCount,
-        dom.rightLineCount,
-
-        dom.rightLineNumbers
-
-    );
-
+export function refreshAll(dom){
+ updateCounters(dom.leftEditor,dom.leftCharCount,dom.leftWordCount,dom.leftLineCount,dom.leftLineNumbers);
+ updateCounters(dom.rightEditor,dom.rightCharCount,dom.rightWordCount,dom.rightLineCount,dom.rightLineNumbers);
 }

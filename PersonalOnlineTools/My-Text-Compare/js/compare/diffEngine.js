@@ -1,340 +1,59 @@
 /**
- * ============================================================
- * My Text Compare
- * Diff Engine (Part 1)
- * ------------------------------------------------------------
- * Longest Common Subsequence (LCS)
- *
- * Responsibilities:
- * - Compare token arrays
- * - Build LCS matrix
- * - Prepare for backtracking
- *
- * Part 2 contains:
- * - Backtracking
- * - Diff generation
- * - Public compare() API
- * ============================================================
+ * LCS Diff Engine
  */
+import {DIFF_TYPE} from "../config.js";
 
-import { TOKEN_TYPE } from "./tokenizer.js";
-import { DIFF_TYPE } from "../config.js";
+function eq(a,b){
+  return a.normalized===b.normalized;
+}
 
-/**
- * Compare two tokens.
- */
-function tokensEqual(left, right) {
-
-    if (!left || !right) {
-
-        return false;
-
+function matrix(a,b){
+  const m=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
+  for(let i=1;i<=a.length;i++){
+    for(let j=1;j<=b.length;j++){
+      m[i][j]=eq(a[i-1],b[j-1])
+        ?m[i-1][j-1]+1
+        :Math.max(m[i-1][j],m[i][j-1]);
     }
-
-    return left.normalized === right.normalized;
-
+  }
+  return m;
 }
 
-/**
- * Build LCS Matrix.
- *
- * Matrix dimensions:
- *
- * left.length + 1
- * right.length + 1
- */
-function buildMatrix(leftTokens, rightTokens) {
+export function compareTokens(left,right){
 
-    const rows = leftTokens.length + 1;
+  const lcs=matrix(left,right);
+  const diff=[];
 
-    const cols = rightTokens.length + 1;
+  let i=left.length;
+  let j=right.length;
 
-    const matrix = Array.from(
+  while(i>0||j>0){
 
-        { length: rows },
-
-        () => new Array(cols).fill(0)
-
-    );
-
-    for (let row = 1; row < rows; row++) {
-
-        for (let col = 1; col < cols; col++) {
-
-            if (
-
-                tokensEqual(
-
-                    leftTokens[row - 1],
-
-                    rightTokens[col - 1]
-
-                )
-
-            ) {
-
-                matrix[row][col] =
-
-                    matrix[row - 1][col - 1] + 1;
-
-            }
-
-            else {
-
-                matrix[row][col] = Math.max(
-
-                    matrix[row - 1][col],
-
-                    matrix[row][col - 1]
-
-                );
-
-            }
-
-        }
-
+    if(i>0&&j>0&&eq(left[i-1],right[j-1])){
+      diff.unshift({
+        type:DIFF_TYPE.MATCH,
+        left:left[i-1],
+        right:right[j-1]
+      });
+      i--;j--;
     }
-
-    return matrix;
-
-}
-
-/**
- * Create Match Diff.
- */
-function createMatch(token) {
-
-    return {
-
-        type: DIFF_TYPE.MATCH,
-
-        left: token,
-
-        right: token
-
-    };
-
-}
-
-/**
- * Create Removed Diff.
- */
-function createRemoved(token) {
-
-    return {
-
-        type: DIFF_TYPE.REMOVED,
-
-        left: token,
-
-        right: null
-
-    };
-
-}
-
-/**
- * Create Added Diff.
- */
-function createAdded(token) {
-
-    return {
-
-        type: DIFF_TYPE.ADDED,
-
-        left: null,
-
-        right: token
-
-    };
-
-}
-
-/**
- * Split unified diff into
- * left and right render arrays.
- */
-function splitDiff(diffList) {
-
-    const left = [];
-
-    const right = [];
-
-    for (const item of diffList) {
-
-        switch (item.type) {
-
-            case DIFF_TYPE.MATCH:
-
-                left.push({
-
-                    type: item.type,
-
-                    token: item.left
-
-                });
-
-                right.push({
-
-                    type: item.type,
-
-                    token: item.right
-
-                });
-
-                break;
-
-            case DIFF_TYPE.REMOVED:
-
-                left.push({
-
-                    type: item.type,
-
-                    token: item.left
-
-                });
-
-                break;
-
-            case DIFF_TYPE.ADDED:
-
-                right.push({
-
-                    type: item.type,
-
-                    token: item.right
-
-                });
-
-                break;
-
-        }
-
+    else if(j>0&&(i===0||lcs[i][j-1]>=lcs[i-1][j])){
+      diff.unshift({
+        type:DIFF_TYPE.ADDED,
+        left:null,
+        right:right[j-1]
+      });
+      j--;
     }
-
-    return {
-
-        left,
-
-        right
-
-    };
-
-}
-
-/**
- * Count statistics.
- */
-function calculateStatistics(diffList) {
-
-    let matched = 0;
-
-    let added = 0;
-
-    let removed = 0;
-
-    for (const item of diffList) {
-
-        switch (item.type) {
-
-            case DIFF_TYPE.MATCH:
-
-                if (
-
-                    item.left.type !== TOKEN_TYPE.SPACE &&
-                    item.left.type !== TOKEN_TYPE.NEWLINE
-
-                ) {
-
-                    matched++;
-
-                }
-
-                break;
-
-            case DIFF_TYPE.ADDED:
-
-                if (
-
-                    item.right.type !== TOKEN_TYPE.SPACE &&
-                    item.right.type !== TOKEN_TYPE.NEWLINE
-
-                ) {
-
-                    added++;
-
-                }
-
-                break;
-
-            case DIFF_TYPE.REMOVED:
-
-                if (
-
-                    item.left.type !== TOKEN_TYPE.SPACE &&
-                    item.left.type !== TOKEN_TYPE.NEWLINE
-
-                ) {
-
-                    removed++;
-
-                }
-
-                break;
-
-        }
-
+    else{
+      diff.unshift({
+        type:DIFF_TYPE.REMOVED,
+        left:left[i-1],
+        right:null
+      });
+      i--;
     }
+  }
 
-    const total =
-
-        matched + added + removed;
-
-    const similarity =
-
-        total === 0
-
-            ? 100
-
-            : Math.round(
-
-                (matched / total) * 100
-
-            );
-
-    return {
-
-        matched,
-
-        added,
-
-        removed,
-
-        different: added + removed,
-
-        similarity
-
-    };
-
+  return diff;
 }
-
-/**
- * Backtracking starts here.
- *
- * Continued in Part 2.
- */
-function backtrack(
-
-    matrix,
-
-    leftTokens,
-
-    rightTokens
-
-) {
-
-    const diff = [];
-
-    let row = leftTokens.length;
-
-    let col = rightTokens.length;

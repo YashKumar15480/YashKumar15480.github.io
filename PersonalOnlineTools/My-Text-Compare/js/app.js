@@ -1,58 +1,57 @@
-// =========================================
-// Application Entry
-// =========================================
+import {DOM} from "./utils/dom.js";
+import {refreshAll} from "./editor/counters.js";
+import {debounce} from "./utils/debounce.js";
+import {initializeTheme} from "./ui/theme.js";
+import {syncEditors} from "./editor/scrollSync.js";
+import {compare} from "./compare/compare.js";
+import {updateToolbarStatus,enableCompare} from "./ui/toolbar.js";
+import {STATUS} from "./config.js";
 
-import { updateCounters } from "./counters.js";
-import { initializeUI } from "./ui.js";
-
-const leftEditor = document.getElementById("leftEditor");
-const rightEditor = document.getElementById("rightEditor");
-const leftLineNumbers =
-    document.getElementById("leftLineNumbers");
-
-const rightLineNumbers =
-    document.getElementById("rightLineNumbers");
-
-const leftCharCount = document.getElementById("leftCharCount");
-const leftWordCount = document.getElementById("leftWordCount");
-const leftLineCount = document.getElementById("leftLineCount");
-
-const rightCharCount = document.getElementById("rightCharCount");
-const rightWordCount = document.getElementById("rightWordCount");
-const rightLineCount = document.getElementById("rightLineCount");
-
-initializeUI({
-
-    leftEditor,
-    rightEditor,
-
-    compareBtn: document.getElementById("compareBtn"),
-    clearBtn: document.getElementById("clearBtn"),
-    swapBtn: document.getElementById("swapBtn"),
-
-    statusText: document.getElementById("statusText")
-
-});
-
-function refreshCounters() {
-
-    updateCounters(
-        leftEditor,
-        leftCharCount,
-        leftWordCount,
-        leftLineCount
-    );
-
-    updateCounters(
-        rightEditor,
-        rightCharCount,
-        rightWordCount,
-        rightLineCount
-    );
-
+function update(){
+  refreshAll(DOM);
+  const ok=DOM.leftEditor.textContent.trim()&&DOM.rightEditor.textContent.trim();
+  enableCompare(DOM.compareBtn,!!ok);
 }
 
-leftEditor.addEventListener("input", refreshCounters);
-rightEditor.addEventListener("input", refreshCounters);
+document.addEventListener("DOMContentLoaded",()=>{
 
-refreshCounters();
+ initializeTheme();
+
+ refreshAll(DOM);
+
+ syncEditors(
+   DOM.leftEditor,
+   DOM.rightEditor,
+   DOM.leftLineNumbers,
+   DOM.rightLineNumbers
+ );
+
+ const handler=debounce(update,150);
+
+ DOM.leftEditor?.addEventListener("input",handler);
+ DOM.rightEditor?.addEventListener("input",handler);
+
+ DOM.compareBtn?.addEventListener("click",()=>{
+
+   const result=compare(
+     DOM.leftEditor.textContent,
+     DOM.rightEditor.textContent,
+     {
+       ignoreCase:DOM.ignoreCase?.checked,
+       ignoreExtraSpaces:DOM.ignoreSpaces?.checked
+     }
+   );
+
+   DOM.leftEditor.innerHTML=result.leftHtml;
+   DOM.rightEditor.innerHTML=result.rightHtml;
+
+   DOM.matchedCount.textContent=result.statistics.matched;
+   DOM.differentCount.textContent=result.statistics.different;
+   DOM.similarityPercentage.textContent=result.statistics.similarity+"%";
+
+   updateToolbarStatus(DOM,STATUS.COMPLETED);
+
+ });
+
+ update();
+});

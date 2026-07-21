@@ -1,46 +1,6 @@
-/**
- * ============================================================
- * Line Numbers
- * ============================================================
- */
+import {generateLineNumbers,getLineCount,getEditorText} from "../utils/utils.js";
 
-import {
-
-    generateLineNumbers,
-    getLineCount,
-    getEditorText
-
-} from "../utils/utils.js";
-
-export function updateLineNumbers(
-
-    editor,
-    lineNumbers
-
-) {
-
-    const text =
-        getEditorText(editor);
-
-    const lines =
-        Math.max(
-            getLineCount(text),
-            1
-        );
-
-    lineNumbers.innerHTML =
-        generateLineNumbers(lines);
-
-}
-
-export function syncLineNumberScroll(
-
-    editor,
-    lineNumbers
-
-) {
-
-    lineNumbers.scrollTop =
-        editor.scrollTop;
-
+export function updateLineNumbers(editor,target){
+ const lines=Math.max(getLineCount(getEditorText(editor)),1);
+ target.innerHTML=generateLineNumbers(lines);
 }
